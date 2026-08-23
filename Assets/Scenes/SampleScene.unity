@@ -444,11 +444,11 @@ MonoBehaviour:
   - {fileID: 92614012}
   - {fileID: 109970843}
   - {fileID: 1955464889}
-  playerColors:
-  - {r: 0.15442412, g: 0.8050314, b: 0.15442412, a: 1}
-  - {r: 0.13941291, g: 0.13941291, b: 0.836478, a: 1}
-  - {r: 0.7798742, g: 0.14959837, b: 0.14959837, a: 1}
-  - {r: 0.7987421, g: 0.7469056, b: 0.14819425, a: 1}
+  playerMaterials:
+  - {fileID: 2100000, guid: ca0698d0e35b72748a485f1edde1fe5c, type: 2}
+  - {fileID: 2100000, guid: 3237f050a295faa46804cf2d1f1482fe, type: 2}
+  - {fileID: 2100000, guid: 91c6bd57215dec6409b2e56aec7a0bc3, type: 2}
+  - {fileID: 2100000, guid: 1f80c36f8fffd1543a6aca71557d88e3, type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
