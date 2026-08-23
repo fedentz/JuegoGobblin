@@ -14,6 +14,10 @@ namespace Project.Player
         [Header("Move")]
         [SerializeField] private float moveSpeed = 5f;
 
+        [Header("Weight Penalty")]
+        [SerializeField] private PlayerInventory inventory;
+        [SerializeField] private float overweightSpeedMultiplier = 0.6f;
+
         [Header("Jump")]
         [SerializeField] private float jumpForce = 6f;
         [SerializeField] private float groundCheckRadius = 0.2f;
@@ -60,8 +64,14 @@ namespace Project.Player
 
         private void FixedUpdate()
         {
+            float effectiveSpeed = moveSpeed;
+            if (inventory != null && inventory.IsOverweight)
+            {
+                effectiveSpeed *= overweightSpeedMultiplier;
+            }
+
             Vector3 moveDir = transform.forward * moveInput.y + transform.right * moveInput.x;
-            Vector3 targetVelocity = moveDir.normalized * moveSpeed;
+            Vector3 targetVelocity = moveDir.normalized * effectiveSpeed;
             rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
 
             if (jumpQueued)
