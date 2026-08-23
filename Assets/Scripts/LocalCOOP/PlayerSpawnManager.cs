@@ -43,9 +43,10 @@ namespace Project.Core
 
                 if (index < playerMaterials.Length)
                 {
-                    var renderer = player.GetComponentInChildren<Renderer>();
-                    if (renderer != null)
+                    var renderers = player.GetComponentsInChildren<Renderer>();
+                    foreach (var renderer in renderers)
                     {
+                        if (renderer.gameObject.name == "Eyes") continue; // dejamos los ojos con su color original
                         renderer.material = playerMaterials[index];
                     }
                 }

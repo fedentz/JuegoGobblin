@@ -401,7 +401,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7188077260648059128}
-  - component: {fileID: 388784070286968585}
   - component: {fileID: 4482756128252309737}
   - component: {fileID: 220391969424425843}
   - component: {fileID: 709177300644086100}
@@ -431,54 +430,9 @@ Transform:
   m_Children:
   - {fileID: 6192220544980988151}
   - {fileID: 7916133773369107461}
-  - {fileID: 8153024853140929381}
+  - {fileID: 4328791302067325008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &388784070286968585
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7769155408189251835}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e4817863246982442b549a1f1c5cefd1, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &4482756128252309737
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -527,7 +481,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &709177300644086100
 MonoBehaviour:
@@ -632,7 +586,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   holdThreshold: 0.5
---- !u!1001 &8552306646432881806
+--- !u!1001 &4294267716228575163
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -694,15 +648,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 099957941516e914c98308e23378fd1a, type: 3}
       propertyPath: m_Name
-      value: Basic_Goblin
+      value: GOBLIN_GREEN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099957941516e914c98308e23378fd1a, type: 3}
---- !u!4 &8153024853140929381 stripped
+--- !u!4 &4328791302067325008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 099957941516e914c98308e23378fd1a, type: 3}
-  m_PrefabInstance: {fileID: 8552306646432881806}
+  m_PrefabInstance: {fileID: 4294267716228575163}
   m_PrefabAsset: {fileID: 0}
