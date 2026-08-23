@@ -10,6 +10,7 @@ namespace Project.Player
         [Header("Refs")]
         [SerializeField] private Transform cameraRig;
         [SerializeField] private Transform groundCheck;
+        [SerializeField] private Animator animator; // NUEVO: arrastrar acá el Animator de GOBLIN_GREEN
 
         [Header("Move")]
         [SerializeField] private float moveSpeed = 5f;
@@ -73,6 +74,12 @@ namespace Project.Player
             Vector3 moveDir = transform.forward * moveInput.y + transform.right * moveInput.x;
             Vector3 targetVelocity = moveDir.normalized * effectiveSpeed;
             rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
+
+            // NUEVO: le pasamos al Animator qué tan rápido nos estamos moviendo
+            if (animator != null)
+            {
+                animator.SetFloat("Speed", moveDir.magnitude);
+            }
 
             if (jumpQueued)
             {

@@ -497,8 +497,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraRig: {fileID: 6192220544980988151}
   groundCheck: {fileID: 7916133773369107461}
+  animator: {fileID: 5866666021909216657, guid: 099957941516e914c98308e23378fd1a, type: 3}
   moveSpeed: 5
-  inventory: {fileID: 0}
+  inventory: {fileID: 4295526063020775023}
   overweightSpeedMultiplier: 0.6
   jumpForce: 6
   groundCheckRadius: 0.2
@@ -650,6 +651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GOBLIN_GREEN
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 099957941516e914c98308e23378fd1a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 24f2e40c25466244c954a617c8d94d60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
