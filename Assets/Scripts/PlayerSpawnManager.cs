@@ -14,7 +14,6 @@ namespace Project.Core
         private void Start()
         {
             var players = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
-            Debug.Log($"SpawnManager encontró {players.Length} jugadores");
 
             foreach (var player in players)
             {
@@ -22,15 +21,27 @@ namespace Project.Core
 
                 if (index < spawnPoints.Length)
                 {
+                    Vector3 spawnPos = spawnPoints[index].position;
+
+                    if (Terrain.activeTerrain != null)
+                    {
+                        float terrainHeight = Terrain.activeTerrain.SampleHeight(spawnPos);
+                        spawnPos.y = terrainHeight + 1f; // +1 para no aparecer justo pegado a la superficie
+                    }
+
                     var rb = player.GetComponent<Rigidbody>();
                     if (rb != null)
                     {
                         rb.linearVelocity = Vector3.zero;
                         rb.angularVelocity = Vector3.zero;
+                        rb.position = spawnPos;
+                        rb.rotation = spawnPoints[index].rotation;
                     }
-
-                    player.transform.position = spawnPoints[index].position;
-                    player.transform.rotation = spawnPoints[index].rotation;
+                    else
+                    {
+                        player.transform.position = spawnPos;
+                        player.transform.rotation = spawnPoints[index].rotation;
+                    }
                 }
 
                 if (index < playerColors.Length)
