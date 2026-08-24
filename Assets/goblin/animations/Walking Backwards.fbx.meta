@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddc880fa7e1f923449918316db98375d
+guid: 6b4671260b98e2146983dc9b8b93383c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running
+      name: Walk BackWards
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

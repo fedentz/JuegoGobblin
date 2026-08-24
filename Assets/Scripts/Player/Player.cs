@@ -15,7 +15,6 @@ namespace Project.Player
 
         [Header("Move")]
         [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private float sprintSpeedMultiplier = 1.6f;
         [SerializeField] private float sneakySpeedMultiplier = 0.4f;
 
         [Header("Weight Penalty")]
@@ -34,11 +33,10 @@ namespace Project.Player
         [SerializeField] private float maxPitch = 80f;
 
         [Header("Animator Speed Steps")]
-        [Tooltip("Valores que le mandamos al Blend Tree del Animator (parámetro Speed)")]
+        [Tooltip("Valores que le mandamos al parámetro Speed (decide Idle/Walking/Running)")]
         [SerializeField] private float animSpeedIdle = 0f;
-        [SerializeField] private float animSpeedSneaky = 0.3f;
         [SerializeField] private float animSpeedWalk = 0.6f;
-        [SerializeField] private float animSpeedRun = 1f;
+        [SerializeField] private float animSpeedRun = 1f; // reservado: lo va a disparar el hechizo de correr, no hay input directo por ahora
 
         private Rigidbody rb;
         private PlayerInput playerInput;
@@ -46,7 +44,6 @@ namespace Project.Player
         private Vector2 lookInput;
         private float pitch;
         private bool jumpQueued;
-        private bool isSprinting;
         private bool isSneaking;
 
         private void Awake()
@@ -84,6 +81,31 @@ namespace Project.Player
             if (value.isPressed) jumpQueued = true;
         }
 
+        // Estas acciones tienen que existir en el Input Actions asset (Sneak,
+        // EmoteCheer, EmoteBaile1, EmoteBaile2, EmoteAura), atadas al dispositivo de CADA
+        // jugador. Así evitamos que el input de un jugador dispare animaciones en todos los demás.
+        public void OnSneak(InputValue value) => isSneaking = value.isPressed;
+
+        public void OnEmoteCheer(InputValue value) => TryPlayEmote(value, "TriggerCheer");
+
+        public void OnEmoteBaile1(InputValue value) => TryPlayEmote(value, "TriggerBaile1");
+
+        public void OnEmoteBaile2(InputValue value) => TryPlayEmote(value, "TriggerBaile2");
+
+        public void OnEmoteAura(InputValue value) => TryPlayEmote(value, "TriggerAura");
+
+        private void TryPlayEmote(InputValue value, string triggerName)
+        {
+            if (!value.isPressed) return;
+            if (animator == null) return;
+
+            // Si ya estamos en un estado con Tag "Emote", ignoramos el nuevo emote
+            // (evita que se pisen entre sí). El movimiento lo corta solo, vía Animator.
+            if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Emote")) return;
+
+            animator.SetTrigger(triggerName);
+        }
+
         private void Update()
         {
             bool isMouseLook = playerInput.currentControlScheme == "Keyboard&Mouse";
@@ -93,15 +115,6 @@ namespace Project.Player
 
             pitch = Mathf.Clamp(pitch - lookInput.y * sensitivity, minPitch, maxPitch);
             cameraRig.localRotation = Quaternion.Euler(pitch, 0f, 0f);
-
-            // Sprint: Shift sostenido. Sneaky: Left Ctrl sostenido.
-            // TODO: si vas a Input Actions "de verdad" (no polling directo de Keyboard),
-            // reemplazar por OnSprint(InputValue)/OnSneak(InputValue) igual que OnMove/OnJump.
-            if (Keyboard.current != null)
-            {
-                isSprinting = Keyboard.current.leftShiftKey.isPressed;
-                isSneaking = Keyboard.current.leftCtrlKey.isPressed;
-            }
         }
 
         private void FixedUpdate()
@@ -111,15 +124,10 @@ namespace Project.Player
             float inputMagnitude = moveInput.magnitude;
 
             // Determinar el multiplicador de velocidad física según el modo.
-            // Prioridad: sneaky > sprint > normal (no se puede sprintear agachado).
             float effectiveSpeed = moveSpeed;
             if (isSneaking)
             {
                 effectiveSpeed *= sneakySpeedMultiplier;
-            }
-            else if (isSprinting)
-            {
-                effectiveSpeed *= sprintSpeedMultiplier;
             }
 
             if (inventory != null && inventory.IsOverweight)
@@ -131,27 +139,20 @@ namespace Project.Player
             Vector3 targetVelocity = moveDir.normalized * effectiveSpeed;
             rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
 
-            // Elegir el escalón de animación según el mismo criterio que la velocidad física.
-            float animSpeed;
-            if (inputMagnitude < 0.05f)
-            {
-                animSpeed = animSpeedIdle;
-            }
-            else if (isSneaking)
-            {
-                animSpeed = animSpeedSneaky;
-            }
-            else if (isSprinting)
-            {
-                animSpeed = animSpeedRun;
-            }
-            else
-            {
-                animSpeed = animSpeedWalk;
-            }
-
             if (animator != null && animator.runtimeAnimatorController != null)
             {
+                // MoveX/MoveZ alimentan el Blend Tree 2D direccional de Walking,
+                // para que la animación cambie según hacia dónde te movés SIN rotar el mesh.
+                // El cuerpo siempre mira hacia la cámara, como corresponde.
+                animator.SetFloat("MoveX", moveInput.x);
+                animator.SetFloat("MoveZ", moveInput.y);
+
+                // Bool que fuerza el estado Sneaky (solo con Ctrl), independiente del tier de velocidad.
+                animator.SetBool("IsSneaking", isSneaking && inputMagnitude > 0.05f);
+
+                // Tier de velocidad (Idle/Walking) que decide en qué estado/Blend Tree estamos.
+                // Running queda reservado para cuando se dispare desde el hechizo de correr.
+                float animSpeed = inputMagnitude < 0.05f ? animSpeedIdle : animSpeedWalk;
                 animator.SetFloat("Speed", animSpeed);
             }
 
@@ -161,6 +162,11 @@ namespace Project.Player
                 if (IsGrounded())
                 {
                     rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+
+                    if (animator != null && animator.runtimeAnimatorController != null)
+                    {
+                        animator.SetTrigger("TriggerJump");
+                    }
                 }
             }
         }

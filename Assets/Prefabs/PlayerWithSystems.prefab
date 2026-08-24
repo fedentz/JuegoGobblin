@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 2601243159789780713}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.174}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -500,6 +500,7 @@ MonoBehaviour:
   animator: {fileID: 7706459499774333482}
   animatorController: {fileID: 9100000, guid: 24f2e40c25466244c954a617c8d94d60, type: 2}
   moveSpeed: 5
+  sneakySpeedMultiplier: 0.4
   inventory: {fileID: 4295526063020775023}
   overweightSpeedMultiplier: 0.6
   jumpForce: 6
@@ -511,6 +512,9 @@ MonoBehaviour:
   gamepadSensitivity: 120
   minPitch: -80
   maxPitch: 80
+  animSpeedIdle: 0
+  animSpeedWalk: 0.6
+  animSpeedRun: 1
 --- !u!114 &3114788520485245543
 MonoBehaviour:
   m_ObjectHideFlags: 0
