@@ -30980,7 +30980,8 @@ PrefabInstance:
       value: Puerta Rotada_23_19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6810605731002063599, guid: ca87558b22e178b45a520554d5087d16, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca87558b22e178b45a520554d5087d16, type: 3}
@@ -31414,7 +31415,9 @@ PrefabInstance:
       value: Puerta Rotada_23_18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5055757581663877238, guid: ca87558b22e178b45a520554d5087d16, type: 3}
+    - {fileID: 6810605731002063599, guid: ca87558b22e178b45a520554d5087d16, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca87558b22e178b45a520554d5087d16, type: 3}
