@@ -6,10 +6,7 @@ namespace Project.Core
     public class PlayerSpawnManager : MonoBehaviour
     {
         [SerializeField] private Transform[] spawnPoints;
-        [SerializeField] private Color[] playerColors = new Color[]
-        {
-            Color.green, Color.blue, Color.red, Color.yellow
-        };
+        [SerializeField] private Material[] playerMaterials;
 
         private void Start()
         {
@@ -26,7 +23,7 @@ namespace Project.Core
                     if (Terrain.activeTerrain != null)
                     {
                         float terrainHeight = Terrain.activeTerrain.SampleHeight(spawnPos);
-                        spawnPos.y = terrainHeight + 1f; // +1 para no aparecer justo pegado a la superficie
+                        spawnPos.y = terrainHeight + 1f;
                     }
 
                     var rb = player.GetComponent<Rigidbody>();
@@ -44,10 +41,14 @@ namespace Project.Core
                     }
                 }
 
-                if (index < playerColors.Length)
+                if (index < playerMaterials.Length)
                 {
-                    var renderer = player.GetComponentInChildren<Renderer>();
-                    if (renderer != null) renderer.material.color = playerColors[index];
+                    var renderers = player.GetComponentsInChildren<Renderer>();
+                    foreach (var renderer in renderers)
+                    {
+                        if (renderer.gameObject.name == "Eyes") continue; // dejamos los ojos con su color original
+                        renderer.material = playerMaterials[index];
+                    }
                 }
             }
         }
