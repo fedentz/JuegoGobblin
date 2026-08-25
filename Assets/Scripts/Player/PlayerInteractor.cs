@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Interaction;
@@ -15,6 +16,21 @@ namespace Project.Player
         [SerializeField] private float interactRadius = 0.4f;
         [SerializeField] private LayerMask interactableLayer;
         [SerializeField] private float holdThreshold = 0.5f;
+
+        // Eventos para que la UI reaccione sin que este script sepa nada de paneles/textos.
+        public event Action<IInteractable> TargetChanged;
+        public event Action<ItemData> ItemPickedUp;
+        public event Action ItemResolved;
+        public event Action<ItemData> InsufficientSpace;
+        public event Action<ItemData> ItemSaved;
+
+        public IInteractable CurrentTarget => currentTarget;
+        public ItemData HeldItem => heldItem;
+
+        // Nombre del botón real, según el dispositivo activo de ESTE jugador (teclado, gamepad, etc).
+        // "E" en teclado, o el botón correspondiente ("X", "A"...) si juega con control.
+        public string InteractKeyGlyph => interactAction != null ? interactAction.GetBindingDisplayString() : "E";
+        public string DiscardKeyGlyph => discardAction != null ? discardAction.GetBindingDisplayString() : "Q";
 
         private PlayerInput playerInput;
         private InputAction interactAction;
@@ -65,9 +81,11 @@ namespace Project.Player
                 if (heldItem != null && lootWithPendingItem != null)
                 {
                     lootWithPendingItem.ReturnItem(heldItem);
-                    Debug.Log($"Te alejaste, {heldItem.itemName} vuelve al final de la cola");
+                    Debug.Log("Te alejaste, el ítem vuelve al final de la cola");
+                    ItemResolved?.Invoke();
                 }
                 ResetHoldState();
+                TargetChanged?.Invoke(currentTarget);
             }
         }
 
@@ -98,25 +116,35 @@ namespace Project.Player
                     bool added = inventory != null && inventory.TryAddItem(heldItem.weight);
                     if (added)
                     {
-                        Debug.Log($"Agregado {heldItem.itemName} a la bolsa");
+                        Debug.Log("Ítem agregado a la bolsa");
+                        ItemSaved?.Invoke(heldItem);
+
+                        if (heldItem.grantedSpell != null)
+                        {
+                            var caster = GetComponent<PlayerSpellCaster>();
+                            if (caster != null) caster.LearnSpell(heldItem.grantedSpell);
+                        }
                     }
                     else
                     {
-                        Debug.Log($"No entra {heldItem.itemName}, bolsa llena, vuelve al cofre");
+                        Debug.Log("No entra, bolsa llena, vuelve al cofre");
                         currentLoot.ReturnItem(heldItem);
+                        InsufficientSpace?.Invoke(heldItem);
                     }
                     heldItem = null;
                     lootWithPendingItem = null;
                     holdTimer = 0f;
                     waitingForRelease = true; // exigir soltar E antes de aceptar el próximo hold
+                    ItemResolved?.Invoke();
                 }
                 else if (discardAction.WasPressedThisFrame())
                 {
-                    Debug.Log($"Descartado {heldItem.itemName}, vuelve al final de la cola");
+                    Debug.Log("Ítem descartado, vuelve al final de la cola");
                     currentLoot.ReturnItem(heldItem);
                     heldItem = null;
                     lootWithPendingItem = null;
                     holdTimer = 0f;
+                    ItemResolved?.Invoke();
                 }
                 return;
             }
@@ -142,7 +170,8 @@ namespace Project.Player
                     heldItem = currentLoot.TakeCurrent();
                     lootWithPendingItem = currentLoot;
                     holdTimer = 0f;
-                    Debug.Log($"Sacaste: {heldItem.itemName}. E para guardar, Q para descartar");
+                    Debug.Log("Sacaste un ítem. E para guardar, Q para descartar");
+                    ItemPickedUp?.Invoke(heldItem);
                 }
             }
             else

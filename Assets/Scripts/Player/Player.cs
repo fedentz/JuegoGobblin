@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,9 @@ namespace Project.Player
         [Header("Move")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float sneakySpeedMultiplier = 0.4f;
+
+        [Header("Run Boost (disparado por hechizo/scroll, no por Shift)")]
+        [SerializeField] private float runSpeedMultiplier = 1.6f;
 
         [Header("Weight Penalty")]
         [SerializeField] private PlayerInventory inventory;
@@ -36,7 +40,7 @@ namespace Project.Player
         [Tooltip("Valores que le mandamos al parámetro Speed (decide Idle/Walking/Running)")]
         [SerializeField] private float animSpeedIdle = 0f;
         [SerializeField] private float animSpeedWalk = 0.6f;
-        [SerializeField] private float animSpeedRun = 1f; // reservado: lo va a disparar el hechizo de correr, no hay input directo por ahora
+        [SerializeField] private float animSpeedRun = 1f;
 
         private Rigidbody rb;
         private PlayerInput playerInput;
@@ -45,11 +49,27 @@ namespace Project.Player
         private float pitch;
         private bool jumpQueued;
         private bool isSneaking;
+        private bool isRunBoostActive;
+        private Coroutine runBoostCoroutine;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
             playerInput = GetComponent<PlayerInput>();
+        }
+
+        // Llamado por PlayerSpellCaster cuando se usa el hechizo/scroll de correr.
+        public void ActivateTemporaryRun(float duration)
+        {
+            if (runBoostCoroutine != null) StopCoroutine(runBoostCoroutine);
+            runBoostCoroutine = StartCoroutine(RunBoostRoutine(duration));
+        }
+
+        private IEnumerator RunBoostRoutine(float duration)
+        {
+            isRunBoostActive = true;
+            yield return new WaitForSeconds(duration);
+            isRunBoostActive = false;
         }
 
         private void EnsureAnimatorController()
@@ -81,9 +101,6 @@ namespace Project.Player
             if (value.isPressed) jumpQueued = true;
         }
 
-        // Estas acciones tienen que existir en el Input Actions asset (Sneak,
-        // EmoteCheer, EmoteBaile1, EmoteBaile2, EmoteAura), atadas al dispositivo de CADA
-        // jugador. Así evitamos que el input de un jugador dispare animaciones en todos los demás.
         public void OnSneak(InputValue value) => isSneaking = value.isPressed;
 
         public void OnEmoteCheer(InputValue value) => TryPlayEmote(value, "TriggerCheer");
@@ -99,8 +116,6 @@ namespace Project.Player
             if (!value.isPressed) return;
             if (animator == null) return;
 
-            // Si ya estamos en un estado con Tag "Emote", ignoramos el nuevo emote
-            // (evita que se pisen entre sí). El movimiento lo corta solo, vía Animator.
             if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Emote")) return;
 
             animator.SetTrigger(triggerName);
@@ -123,11 +138,14 @@ namespace Project.Player
 
             float inputMagnitude = moveInput.magnitude;
 
-            // Determinar el multiplicador de velocidad física según el modo.
             float effectiveSpeed = moveSpeed;
             if (isSneaking)
             {
                 effectiveSpeed *= sneakySpeedMultiplier;
+            }
+            else if (isRunBoostActive)
+            {
+                effectiveSpeed *= runSpeedMultiplier;
             }
 
             if (inventory != null && inventory.IsOverweight)
@@ -141,18 +159,25 @@ namespace Project.Player
 
             if (animator != null && animator.runtimeAnimatorController != null)
             {
-                // MoveX/MoveZ alimentan el Blend Tree 2D direccional de Walking,
-                // para que la animación cambie según hacia dónde te movés SIN rotar el mesh.
-                // El cuerpo siempre mira hacia la cámara, como corresponde.
                 animator.SetFloat("MoveX", moveInput.x);
                 animator.SetFloat("MoveZ", moveInput.y);
 
-                // Bool que fuerza el estado Sneaky (solo con Ctrl), independiente del tier de velocidad.
                 animator.SetBool("IsSneaking", isSneaking && inputMagnitude > 0.05f);
 
-                // Tier de velocidad (Idle/Walking) que decide en qué estado/Blend Tree estamos.
-                // Running queda reservado para cuando se dispare desde el hechizo de correr.
-                float animSpeed = inputMagnitude < 0.05f ? animSpeedIdle : animSpeedWalk;
+                float animSpeed;
+                if (inputMagnitude < 0.05f)
+                {
+                    animSpeed = animSpeedIdle;
+                }
+                else if (isRunBoostActive)
+                {
+                    animSpeed = animSpeedRun;
+                }
+                else
+                {
+                    animSpeed = animSpeedWalk;
+                }
+
                 animator.SetFloat("Speed", animSpeed);
             }
 

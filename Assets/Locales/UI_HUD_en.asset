@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_HUD_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1c58fb9057a02dd47a2411470dffcfb5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 87808246116352
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87967348649984
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88040912547840
+    m_Localized: You don't have enough space for this
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88178884177920
+    m_Localized: Open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88222580436992
+    m_Localized: Search
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88266788401152
+    m_Localized: Learn Ritual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136663473942528
+    m_Localized: E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138795207979008
+    m_Localized: Saved!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151848729276416
+    m_Localized: "Test0\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152105223548928
+    m_Localized: Test1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152195631771648
+    m_Localized: Test2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152467703689216
+    m_Localized: "Run\t\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152829483380736
+    m_Localized: Lumos
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -123,3 +123,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openAngle: 90
   openSpeed: 2
+  actionVerb:
+    m_TableReference:
+      m_TableCollectionName: GUID:1c58fb9057a02dd47a2411470dffcfb5
+    m_TableEntryReference:
+      m_KeyId: 88178884177920
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

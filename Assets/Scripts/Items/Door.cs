@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Project.Interaction
 {
@@ -6,6 +7,12 @@ namespace Project.Interaction
     {
         [SerializeField] private float openAngle = 90f;
         [SerializeField] private float openSpeed = 2f;
+
+        [Header("UI")]
+        [Tooltip("Asignar en el Inspector la entrada localizada 'Open' / 'Abrir'.")]
+        [SerializeField] private LocalizedString actionVerb;
+
+        public LocalizedString ActionVerb => actionVerb;
 
         private bool isOpen;
         private Quaternion closedRot;

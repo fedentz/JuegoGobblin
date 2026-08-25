@@ -1,11 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Project.Interaction
 {
     public class LootContainer : MonoBehaviour, IInteractable
     {
         [SerializeField] private List<ItemData> items = new();
+
+        [Header("UI")]
+        [Tooltip("Asignar en el Inspector la entrada localizada 'Search' / 'Buscar'.")]
+        [SerializeField] private LocalizedString actionVerb;
+
+        public LocalizedString ActionVerb => actionVerb;
 
         private Queue<ItemData> queue;
 

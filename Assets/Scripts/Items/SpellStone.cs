@@ -1,15 +1,26 @@
 using UnityEngine;
+using UnityEngine.Localization;
+using Project.Spells;
+using Project.Player;
 
 namespace Project.Interaction
 {
     public class SpellStone : MonoBehaviour, IInteractable
     {
-        [SerializeField] private string spellName = "Lumos";
+        [Header("Ritual")]
+        [SerializeField] private SpellData spell;
+
+        [Header("UI")]
+        [Tooltip("Asignar en el Inspector la entrada localizada 'Learn Ritual' / 'Aprender Ritual'.")]
+        [SerializeField] private LocalizedString actionVerb;
+
+        public LocalizedString ActionVerb => actionVerb;
+        public SpellData Spell => spell;
 
         public void Interact(GameObject interactor)
         {
-            Debug.Log($"{interactor.name} aprendió el ritual: {spellName}");
-            // TODO: conectar con el sistema de hechizos (rituales permanentes) cuando lo armemos
+            var caster = interactor.GetComponent<PlayerSpellCaster>();
+            if (caster != null) caster.LearnSpell(spell);
         }
     }
 }

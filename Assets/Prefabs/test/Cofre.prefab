@@ -122,12 +122,93 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - itemName: Item1
+  - itemName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    icon: {fileID: 0}
     weight: 1
     value: 100
-  - itemName: Item2
+    grantedSpell:
+      displayName:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      icon: {fileID: 0}
+      effectType: 0
+      consumable: 0
+      cooldownDuration: 0
+  - itemName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    icon: {fileID: 0}
     weight: 2
     value: 200
-  - itemName: Item3
+    grantedSpell:
+      displayName:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      icon: {fileID: 0}
+      effectType: 0
+      consumable: 0
+      cooldownDuration: 0
+  - itemName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    icon: {fileID: 0}
     weight: 10
     value: 1
+    grantedSpell:
+      displayName:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      icon: {fileID: 0}
+      effectType: 0
+      consumable: 0
+      cooldownDuration: 0
+  actionVerb:
+    m_TableReference:
+      m_TableCollectionName: GUID:1c58fb9057a02dd47a2411470dffcfb5
+    m_TableEntryReference:
+      m_KeyId: 88222580436992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
