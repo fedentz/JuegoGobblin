@@ -35,7 +35,7 @@ namespace Project.Core
         public void StartGame()
         {
             if (nextSlotIndex < 1) return;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Dungeon V1");
         }
     }
 }
