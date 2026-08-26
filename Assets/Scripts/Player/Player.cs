@@ -121,12 +121,17 @@ namespace Project.Player
             animator.SetTrigger(triggerName);
         }
 
+        private float pendingYaw;
+
         private void Update()
         {
             bool isMouseLook = playerInput.currentControlScheme == "Keyboard&Mouse";
             float sensitivity = isMouseLook ? mouseSensitivity : gamepadSensitivity * Time.deltaTime;
 
-            transform.Rotate(Vector3.up, lookInput.x * sensitivity);
+            // Acumulamos el yaw acá (Update puede correr más seguido que FixedUpdate)
+            // pero lo aplicamos recién en FixedUpdate vía rb.MoveRotation, para no pelear
+            // contra el Rigidbody rotando el Transform directo (eso causaba el shake/tembleque).
+            pendingYaw += lookInput.x * sensitivity;
 
             pitch = Mathf.Clamp(pitch - lookInput.y * sensitivity, minPitch, maxPitch);
             cameraRig.localRotation = Quaternion.Euler(pitch, 0f, 0f);
@@ -135,6 +140,12 @@ namespace Project.Player
         private void FixedUpdate()
         {
             EnsureAnimatorController();
+
+            if (pendingYaw != 0f)
+            {
+                rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, pendingYaw, 0f));
+                pendingYaw = 0f;
+            }
 
             float inputMagnitude = moveInput.magnitude;
 

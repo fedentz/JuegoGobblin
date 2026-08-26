@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 9049512958823427433}
   - component: {fileID: 7399448875471772437}
   - component: {fileID: 1427995549018056916}
-  - component: {fileID: 3901596286583674052}
   m_Layer: 0
   m_Name: Ojo1
   m_TagString: Untagged
@@ -199,27 +198,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3901596286583674052
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527660866048692981}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &719109117965470289
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,7 +5039,6 @@ GameObject:
   - component: {fileID: 548793731535568156}
   - component: {fileID: 8525526662285982213}
   - component: {fileID: 3385884697863276399}
-  - component: {fileID: 8806908953883200792}
   m_Layer: 0
   m_Name: Ojo1 (1)
   m_TagString: Untagged
@@ -5137,27 +5114,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8806908953883200792
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536566212897305313}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8666056720866552707
 GameObject:
   m_ObjectHideFlags: 0
