@@ -45,11 +45,11 @@ namespace Project.UI
         [Tooltip("4 sprites de fondo del panel, uno por color de jugador (índice 0-3).")]
         [SerializeField] private Sprite[] itemPanelSpritesByPlayerColor;
 
-        [Header("Localized Formats (crear en la String Table UI_HUD)")]
-        [Tooltip("Formato de una acción, usado tanto para el prompt de un solo verbo como para el panel de ítem: \"{0}: {1}\"")]
-        [SerializeField] private LocalizedString shortActionFormat;
-        [SerializeField] private LocalizedString saveLabel;   // "Save" / "Guardar"
-        [SerializeField] private LocalizedString returnLabel; // "Return" / "Devolver"
+        [Header("Localized Labels (crear en la String Table UI_HUD)")]
+        [Tooltip("Solo la palabra 'Save'/'Guardar' — el 'E: ' se arma en código.")]
+        [SerializeField] private LocalizedString saveLabel;
+        [Tooltip("Solo la palabra 'Return'/'Devolver' — el 'Q: ' se arma en código.")]
+        [SerializeField] private LocalizedString returnLabel;
 
         [Header("Error Message")]
         [SerializeField] private TMP_Text errorText;
@@ -113,7 +113,7 @@ namespace Project.UI
         {
             genericPromptRoot.SetActive(true);
             string verb = target.ActionVerb.GetLocalizedString();
-            genericPromptText.text = shortActionFormat.GetLocalizedString(interactor.InteractKeyGlyph, verb);
+            genericPromptText.text = $"{interactor.InteractKeyGlyph}: {verb}";
         }
 
         private void ShowRitualPreview(SpellStone spellStone)
@@ -138,7 +138,7 @@ namespace Project.UI
             ritualNameText.text = spell != null ? spell.displayName.GetLocalizedString() : "";
 
             string verb = spellStone.ActionVerb.GetLocalizedString();
-            ritualPromptText.text = shortActionFormat.GetLocalizedString(interactor.InteractKeyGlyph, verb);
+            ritualPromptText.text = $"{interactor.InteractKeyGlyph}: {verb}";
         }
 
         private void HandleItemPickedUp(ItemData item)
@@ -163,8 +163,13 @@ namespace Project.UI
             itemValueText.text = item.value.ToString();
             itemWeightText.text = $"{item.weight} kg";
 
-            itemSaveLine.text = shortActionFormat.GetLocalizedString(interactor.InteractKeyGlyph, saveLabel.GetLocalizedString());
-            itemReturnLine.text = shortActionFormat.GetLocalizedString(interactor.DiscardKeyGlyph, returnLabel.GetLocalizedString());
+            string interactKey = interactor.InteractKeyGlyph;
+            string discardKey = interactor.DiscardKeyGlyph;
+            string saveText = saveLabel.GetLocalizedString();
+            string returnText = returnLabel.GetLocalizedString();
+
+            itemSaveLine.text = $"{interactKey}: {saveText}";
+            itemReturnLine.text = $"{discardKey}: {returnText}";
         }
 
         private void HandleItemResolved()

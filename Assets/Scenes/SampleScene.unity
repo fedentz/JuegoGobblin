@@ -864,6 +864,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 885ff1dd0f4a400408f9dff52d308034, type: 2}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2407573346736853055, guid: 885ff1dd0f4a400408f9dff52d308034, type: 2}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 512962772328080472, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1012074464996923031, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -1202,6 +1230,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7957041815120166383, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062998509665874288, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8098767944006688988, guid: e4435ce2b28034848b041f03c0e4245f, type: 3}

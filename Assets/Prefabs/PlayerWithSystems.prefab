@@ -2721,7 +2721,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4991536130723400066
 CanvasRenderer:
@@ -2847,6 +2847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9059362720173583244}
   - component: {fileID: 6365387869726431802}
+  - component: {fileID: 1132598159492437917}
   m_Layer: 0
   m_Name: 'Center_Group '
   m_TagString: Untagged
@@ -2884,6 +2885,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5761673536736564812}
   m_CullTransparentMesh: 1
+--- !u!114 &1132598159492437917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761673536736564812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84c7a2e10f01a246bb2f684158a282a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactor: {fileID: 2810714567994041136}
+  root: {fileID: 8681509680714770834}
+  fillImage: {fileID: 1159032006066073554}
 --- !u!1 &5814226950774542536
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,7 +5194,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 64, y: 64}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8292509942783734843
 CanvasRenderer:

@@ -17,7 +17,7 @@ namespace Project.UI
         [Tooltip("4 sprites, uno por color de jugador (índice 0-3).")]
         [SerializeField] private Sprite[] spritesByPlayer;
 
-        private void Awake()
+        private void OnEnable()
         {
             if (target == null || spritesByPlayer == null || spritesByPlayer.Length == 0) return;
 

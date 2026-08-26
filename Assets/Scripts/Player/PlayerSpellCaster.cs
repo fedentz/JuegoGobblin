@@ -29,6 +29,20 @@ namespace Project.Player
         {
             if (spell == null) return;
 
+            // Un ritual permanente solo se aprende una vez. Los consumibles (scrolls)
+            // sí pueden volver a agregarse, porque el anterior ya se gastó y se sacó del slot.
+            if (!spell.consumable)
+            {
+                foreach (SpellData learned in slots)
+                {
+                    if (learned == spell)
+                    {
+                        Debug.Log("Ese ritual ya está aprendido");
+                        return;
+                    }
+                }
+            }
+
             for (int i = 0; i < slots.Length; i++)
             {
                 if (slots[i] == null)

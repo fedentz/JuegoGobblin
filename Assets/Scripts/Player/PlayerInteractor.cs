@@ -29,8 +29,43 @@ namespace Project.Player
 
         // Nombre del botón real, según el dispositivo activo de ESTE jugador (teclado, gamepad, etc).
         // "E" en teclado, o el botón correspondiente ("X", "A"...) si juega con control.
-        public string InteractKeyGlyph => interactAction != null ? interactAction.GetBindingDisplayString() : "E";
-        public string DiscardKeyGlyph => discardAction != null ? discardAction.GetBindingDisplayString() : "Q";
+        // Buscamos explícitamente el binding del dispositivo activo en vez de dejar que
+        // GetBindingDisplayString() adivine entre varios bindings (Interact tiene 3: Keyboard/PS/Xbox).
+        public string InteractKeyGlyph => GetGlyph(interactAction, "E");
+        public string DiscardKeyGlyph => GetGlyph(discardAction, "Q");
+
+        // 0 a 1: progreso de "mantener E" sobre un cofre para sacar un ítem.
+        // 0 cuando no se está manteniendo nada (el redondel de carga debería ocultarse).
+        public float HoldProgress => holdThreshold > 0f ? Mathf.Clamp01(holdTimer / holdThreshold) : 0f;
+
+        private string GetGlyph(InputAction action, string fallback)
+        {
+            if (action == null) return fallback;
+
+            bool usingGamepad = playerInput != null && playerInput.currentControlScheme != null
+                && playerInput.currentControlScheme.Contains("Gamepad");
+            string devicePathHint = usingGamepad ? "<Gamepad>" : "<Keyboard>";
+
+            // 1) Buscar el binding que coincida con el dispositivo activo de ESTE jugador.
+            for (int i = 0; i < action.bindings.Count; i++)
+            {
+                string path = action.bindings[i].effectivePath;
+                if (path != null && path.Contains(devicePathHint))
+                {
+                    string display = action.GetBindingDisplayString(i);
+                    if (!string.IsNullOrEmpty(display)) return display;
+                }
+            }
+
+            // 2) Si no encontramos uno para ese dispositivo, devolver el primer binding con texto.
+            for (int i = 0; i < action.bindings.Count; i++)
+            {
+                string display = action.GetBindingDisplayString(i);
+                if (!string.IsNullOrEmpty(display)) return display;
+            }
+
+            return fallback;
+        }
 
         private PlayerInput playerInput;
         private InputAction interactAction;
