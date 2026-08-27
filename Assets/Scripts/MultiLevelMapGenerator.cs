@@ -140,6 +140,49 @@ public class MultiLevelMapGenerator : MonoBehaviour
     [Tooltip("Coordenada Y fija para la escalera (relativa a la base de cada piso). Solo se usa si 'Use Fixed Stairs Y' est\u00e1 activo.")]
     public float fixedStairsY = -9.530601f;
 
+    [System.Serializable]
+    public struct WeightedDecor
+    {
+        public GameObject prefab;
+        [Tooltip("Peso relativo (no tiene que sumar 100, se normaliza solo). Un prefab con peso 2 sale el doble de seguido que uno con peso 1.")]
+        public float weight;
+    }
+
+    [Header("Decoraci\u00f3n: Luces en pared (bot\u00f3n aparte)")]
+    [Tooltip("Prefab de luz que se monta en la cara interior de una pared elegible.")]
+    public GameObject wallLightPrefab;
+
+    [Range(0f, 1f)]
+    [Tooltip("Probabilidad (0 a 1) de que UNA pared elegible reciba una luz.")]
+    public float wallLightChance = 0.12f;
+
+    [Tooltip("Separaci\u00f3n entre la cara de la pared y el objeto montado (luz), para que no quede clipeando dentro de la geometr\u00eda.")]
+    public float wallDecorForwardOffset = 0.15f;
+
+    [Range(0f, 1f)]
+    [Tooltip("A qu\u00e9 porcentaje de la altura de la pared (0 = piso, 1 = techo) se monta la luz. Ej: 0.6 = 60% de la altura de la pared.")]
+    public float wallDecorHeightPercent = 0.6f;
+
+    [Header("Decoraci\u00f3n: objetos sueltos en bordes de sala (bot\u00f3n aparte)")]
+    [Tooltip("Lista de prefabs candidatos para decorar el PISO en celdas que tocan una pared (bordes y esquinas de sala), cada uno con su peso relativo.")]
+    public List<WeightedDecor> floorDecorOptions = new List<WeightedDecor>();
+
+    [Range(0f, 1f)]
+    [Tooltip("Probabilidad (0 a 1) de que UNA celda de piso elegible (que toca pared) reciba ALGUNA decoraci\u00f3n. Si no sale, esa celda queda vac\u00eda. Si sale, se elige un prefab de 'Floor Decor Options' seg\u00fan su peso.")]
+    public float floorDecorChance = 0.18f;
+
+    [Tooltip("Si est\u00e1 activo, cada decoraci\u00f3n de piso recibe una rotaci\u00f3n Y aleatoria (0-360) para que no se vean todas iguales.")]
+    public bool randomizeFloorDecorRotation = true;
+
+    [Range(0f, 1f)]
+    [Tooltip("Desplazamiento aleatorio dentro de la celda, como PORCENTAJE de la mitad del tama\u00f1o de celda. 0 = siempre en el centro exacto. 1 = puede llegar hasta el borde de la celda. Recomendado alto (0.7-0.9) para que no se vean todas 'en el medio del piso'.")]
+    public float floorDecorJitterPercent = 0.8f;
+
+    [Header("Aleatoriedad de la decoraci\u00f3n")]
+    [Tooltip("Si est\u00e1 activo, usa 'Random Seed' para que la decoraci\u00f3n generada sea siempre la MISMA cada vez que apretes el bot\u00f3n (\u00fatil para iterar sin que cambie todo de nuevo). Si lo desactiv\u00e1s, cada corrida es distinta.")]
+    public bool useFixedRandomSeed = true;
+    public int randomSeed = 12345;
+
     [Header("Organizaci\u00f3n")]
     public bool parentToThis = true;
     public bool clearBeforeGenerating = true;
@@ -952,6 +995,255 @@ public class MultiLevelMapGenerator : MonoBehaviour
         float dg = a.g - b.g;
         float db = a.b - b.b;
         return Mathf.Sqrt(dr * dr + dg * dg + db * db);
+    }
+
+    // ==================== DECORACIONES (bot\u00f3n aparte, no toca la estructura) ====================
+
+    [ContextMenu("Generate Decorations")]
+    public void GenerateDecorations()
+    {
+        if (floorImages == null || floorImages.Count == 0)
+        {
+            Debug.LogError("[MultiLevelMapGenerator] Asign\u00e1 al menos una imagen en 'Floor Images' antes de generar decoraciones.");
+            return;
+        }
+
+        if (wallPrefab == null || floorPrefab == null || doorPrefabHorizontal == null || stairsPrefab == null)
+        {
+            Debug.LogError("[MultiLevelMapGenerator] Faltan prefabs base (Wall/Floor/Door Horizontal/Stairs) para calcular el tama\u00f1o de celda. Son los mismos que us\u00e1s en 'Generate Map From Image'.");
+            return;
+        }
+
+        bool hasWallDecor = wallLightPrefab != null && wallLightChance > 0f;
+        bool hasFloorDecor = floorDecorOptions != null && floorDecorOptions.Count > 0 && floorDecorChance > 0f;
+
+        if (!hasWallDecor && !hasFloorDecor)
+        {
+            Debug.LogWarning("[MultiLevelMapGenerator] No hay nada configurado para decorar: asign\u00e1 Wall Light Prefab y/o cargá 'Floor Decor Options'.");
+            return;
+        }
+
+        var wallInfo = GetPrefabInfo(wallPrefab);
+        var stairsInfo = GetPrefabInfo(stairsPrefab);
+        var floorInfo = GetPrefabInfo(floorPrefab);
+        var doorInfoH = GetPrefabInfo(doorPrefabHorizontal);
+
+        Vector2 worldTileSize = ResolveWorldTileSize(wallInfo, stairsInfo, floorInfo, doorInfoH);
+        if (worldTileSize.x <= 0f || worldTileSize.y <= 0f)
+        {
+            Debug.LogError("[MultiLevelMapGenerator] No se pudo detectar un tama\u00f1o de celda v\u00e1lido.");
+            return;
+        }
+
+        float floorHeight;
+        switch (floorHeightSource)
+        {
+            case FloorHeightSource.Stairs: floorHeight = stairsInfo.height; break;
+            case FloorHeightSource.Wall: floorHeight = wallInfo.height; break;
+            default: floorHeight = manualFloorHeight; break;
+        }
+        if (floorHeight <= 0f) floorHeight = manualFloorHeight;
+
+        System.Random rng = useFixedRandomSeed ? new System.Random(randomSeed) : new System.Random();
+
+        int totalPlaced = 0;
+
+        for (int floorIndex = 0; floorIndex < floorImages.Count; floorIndex++)
+        {
+            Texture2D floorImage = floorImages[floorIndex];
+            if (floorImage == null || !floorImage.isReadable)
+            {
+                Debug.LogWarning($"[MultiLevelMapGenerator] Piso {floorIndex}: imagen inv\u00e1lida o sin Read/Write Enabled. Se salte\u00f3 para decoraci\u00f3n.");
+                continue;
+            }
+
+            mapImage = floorImage;
+            int columns = Mathf.RoundToInt(mapImage.width / pixelsPerTile);
+            int rows = Mathf.RoundToInt(mapImage.height / pixelsPerTile);
+            if (columns <= 0 || rows <= 0) continue;
+
+            TileType[,] grid = new TileType[columns, rows];
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < columns; col++)
+                {
+                    grid[col, row] = SampleTileType(col, row, columns, rows);
+                }
+            }
+
+            string floorName = $"Floor_{floorIndex}";
+            Transform floorParent = transform.Find(floorName);
+            if (floorParent == null)
+            {
+                GameObject floorGO = new GameObject(floorName);
+                floorGO.transform.SetParent(transform, false);
+                Undo.RegisterCreatedObjectUndo(floorGO, "Generate Decorations");
+                floorParent = floorGO.transform;
+            }
+
+            float floorY = stackFloorsDownward ? -(floorIndex * floorHeight) : (floorIndex * floorHeight);
+            floorParent.localPosition = new Vector3(0f, floorY, 0f);
+
+            // Las decoraciones van todas adentro de un hijo "Decor" separado de la estructura,
+            // as\u00ed se pueden borrar/regenerar sin tocar paredes/piso/techo ya generados.
+            Transform oldDecor = floorParent.Find("Decor");
+            if (oldDecor != null)
+            {
+                Undo.DestroyObjectImmediate(oldDecor.gameObject);
+            }
+            GameObject decorGO = new GameObject("Decor");
+            decorGO.transform.SetParent(floorParent, false);
+            Undo.RegisterCreatedObjectUndo(decorGO, "Generate Decorations");
+            activeParent = decorGO.transform;
+
+            int placedThisFloor = GenerateFloorDecorations(grid, columns, rows, worldTileSize, wallInfo, floorInfo, rng, hasWallDecor, hasFloorDecor);
+            totalPlaced += placedThisFloor;
+
+            Debug.Log($"[MultiLevelMapGenerator] Decoraciones piso {floorIndex} ('{floorImage.name}'): {placedThisFloor} objetos.");
+        }
+
+        Debug.Log($"[MultiLevelMapGenerator] Decoraci\u00f3n lista. Total colocado: {totalPlaced}.");
+    }
+
+    [ContextMenu("Clear Decorations")]
+    public void ClearDecorations()
+    {
+        int cleared = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform floorChild = transform.GetChild(i);
+            Transform decor = floorChild.Find("Decor");
+            if (decor != null)
+            {
+                Undo.DestroyObjectImmediate(decor.gameObject);
+                cleared++;
+            }
+        }
+        Debug.Log($"[MultiLevelMapGenerator] Decoraciones borradas en {cleared} piso(s).");
+    }
+
+    private int GenerateFloorDecorations(TileType[,] grid, int columns, int rows, Vector2 worldTileSize, PrefabPlacementInfo wallInfo, PrefabPlacementInfo floorInfo, System.Random rng, bool hasWallDecor, bool hasFloorDecor)
+    {
+        int placedCount = 0;
+        bool InRange(int c, int r) => c >= 0 && c < columns && r >= 0 && r < rows;
+        bool IsWall(int c, int r) => InRange(c, r) && grid[c, r] == TileType.Wall;
+        bool IsFloor(int c, int r) => InRange(c, r) && grid[c, r] == TileType.Floor;
+
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                TileType type = grid[col, row];
+
+                // Luces: solo en paredes de tramo recto (no esquinas, no aisladas),
+                // es decir, celdas de Wall que tienen un \u00fanico vecino de Piso claro.
+                if (hasWallDecor && type == TileType.Wall)
+                {
+                    var segment = DetectSegmentRotation(grid, col, row, columns, rows);
+                    if (segment.floorNeighborOffset != Vector2Int.zero && rng.NextDouble() < wallLightChance)
+                    {
+                        PlaceWallMountedDecor(wallLightPrefab, col, row, rows, worldTileSize, segment.floorNeighborOffset, wallInfo.height, ref placedCount);
+                    }
+                }
+
+                // Decoraci\u00f3n de piso: celdas de Piso que tocan al menos una Pared (bordes/esquinas de sala).
+                if (hasFloorDecor && type == TileType.Floor)
+                {
+                    bool touchesWall = IsWall(col - 1, row) || IsWall(col + 1, row) || IsWall(col, row - 1) || IsWall(col, row + 1);
+                    if (!touchesWall) continue;
+
+                    if (rng.NextDouble() >= floorDecorChance) continue;
+
+                    GameObject chosen = PickWeightedRandom(floorDecorOptions, rng);
+                    if (chosen == null) continue;
+
+                    Vector3 cellCenter = GetCellCenterWorld(col, row, rows, worldTileSize);
+                    float jitterX = ((float)rng.NextDouble() * 2f - 1f) * (worldTileSize.x * 0.5f * floorDecorJitterPercent);
+                    float jitterZ = ((float)rng.NextDouble() * 2f - 1f) * (worldTileSize.y * 0.5f * floorDecorJitterPercent);
+
+                    // La SUPERFICIE de caminar del piso no est\u00e1 en cellCenter.y (eso es el PIVOT del
+                    // Floor Prefab) \u2014 el piso tiene su propio grosor, as\u00ed que su cara de ARRIBA est\u00e1
+                    // m\u00e1s alta que su pivot. Calculamos esa superficie real primero.
+                    float floorTopY = cellCenter.y + floorInfo.centerOffsetY + floorInfo.height * 0.5f;
+
+                    // Y reci\u00e9n ah\u00ed corregimos el pivot del objeto elegido para que su BASE (no su
+                    // pivot/centro) quede apoyada exactamente sobre esa superficie.
+                    var chosenInfo = GetPrefabInfo(chosen);
+                    float bottomOffsetFromPivot = chosenInfo.centerOffsetY - chosenInfo.height * 0.5f;
+                    float positionY = floorTopY - bottomOffsetFromPivot;
+
+                    Vector3 position = new Vector3(cellCenter.x + jitterX, positionY, cellCenter.z + jitterZ);
+
+                    float rotationY = randomizeFloorDecorRotation ? (float)rng.NextDouble() * 360f : chosen.transform.eulerAngles.y;
+                    Quaternion rotation = Quaternion.Euler(0f, rotationY, 0f);
+
+                    GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(chosen);
+                    instance.transform.position = position;
+                    instance.transform.rotation = rotation;
+                    instance.name = $"{chosen.name}_{col}_{row}";
+
+                    if (parentToThis)
+                    {
+                        instance.transform.SetParent(activeParent, true);
+                    }
+
+                    Undo.RegisterCreatedObjectUndo(instance, "Generate Decorations");
+                    placedCount++;
+                }
+            }
+        }
+
+        return placedCount;
+    }
+
+    private void PlaceWallMountedDecor(GameObject prefab, int col, int row, int rows, Vector2 worldTileSize, Vector2Int floorDir, float wallHeight, ref int placedCount)
+    {
+        Vector3 cellCenter = GetCellCenterWorld(col, row, rows, worldTileSize);
+        Vector3 neighborCenter = GetCellCenterWorld(col + floorDir.x, row + floorDir.y, rows, worldTileSize);
+        Vector3 dirToFloor = (neighborCenter - cellCenter).normalized;
+
+        float edgeDistance = (floorDir.y != 0 ? worldTileSize.y : worldTileSize.x) * 0.5f;
+        Vector3 position = cellCenter + dirToFloor * (edgeDistance + wallDecorForwardOffset);
+
+        // Altura: en vez de quedarse a nivel de piso (Y=0), sube al porcentaje configurado
+        // de la altura real de la pared (ej. 0.6 = 60% de la pared).
+        position.y = cellCenter.y + wallHeight * wallDecorHeightPercent;
+
+        Quaternion rotation = Quaternion.LookRotation(dirToFloor, Vector3.up);
+
+        GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+        instance.transform.position = position;
+        instance.transform.rotation = rotation;
+        instance.name = $"{prefab.name}_{col}_{row}";
+
+        if (parentToThis)
+        {
+            instance.transform.SetParent(activeParent, true);
+        }
+
+        Undo.RegisterCreatedObjectUndo(instance, "Generate Decorations");
+        placedCount++;
+    }
+
+    private GameObject PickWeightedRandom(List<WeightedDecor> options, System.Random rng)
+    {
+        float total = 0f;
+        foreach (var o in options)
+        {
+            if (o.prefab != null) total += Mathf.Max(0f, o.weight);
+        }
+        if (total <= 0f) return null;
+
+        float roll = (float)(rng.NextDouble() * total);
+        float cumulative = 0f;
+        foreach (var o in options)
+        {
+            if (o.prefab == null) continue;
+            cumulative += Mathf.Max(0f, o.weight);
+            if (roll <= cumulative) return o.prefab;
+        }
+
+        return null;
     }
 
     private PrefabPlacementInfo GetPrefabInfo(GameObject prefab)
