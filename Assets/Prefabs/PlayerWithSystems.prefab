@@ -822,7 +822,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2081888988018234538
 CanvasRenderer:
@@ -852,12 +852,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d19240b2924b4cd4f99aa3ed40ab31b5, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 0
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3744,7 +3744,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 30}
+  m_SizeDelta: {x: 336, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7063499176904807663
 MonoBehaviour:
@@ -4544,8 +4544,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c9d2bd92297607c4f8d0016813e99139, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4572,6 +4572,8 @@ GameObject:
   - component: {fileID: 2810714567994041136}
   - component: {fileID: 1026178949871874613}
   - component: {fileID: 7763199354477255758}
+  - component: {fileID: 7614604250284039363}
+  - component: {fileID: 6759603476492775978}
   m_Layer: 0
   m_Name: PlayerWithSystems
   m_TagString: Player
@@ -4770,6 +4772,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAnxiety: 100
+  tiempoQuietoParaEmpezar: 1.5
+  velocidadDeSubida: 4
+  velocidadDeBajada: 7
+  distanciaMinimaMovimiento: 1
 --- !u!114 &7763199354477255758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4784,6 +4790,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlight: {fileID: 0}
   gobblinController: {fileID: 709177300644086100}
+--- !u!114 &7614604250284039363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769155408189251835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4686e1a2fd122478683b2b340d026a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerReference: {fileID: 7188077260648059128}
+  target: {fileID: 4150263585531689026}
+  spritesByPlayer:
+  - {fileID: 21300000, guid: c9d2bd92297607c4f8d0016813e99139, type: 3}
+  - {fileID: 21300000, guid: ac63314cbac40a649b930482d5bbe3fd, type: 3}
+  - {fileID: 21300000, guid: 8920e83686acedc409e19abb65a38d56, type: 3}
+  - {fileID: 21300000, guid: bdb2b011193dfe94aae21882bcc17b5d, type: 3}
+--- !u!114 &6759603476492775978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769155408189251835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d807251b93ebfaf43af2b0a07b56b795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radioRuidoBase: 2
+  radioRuidoMaximo: 20
+  radioActual: 0
 --- !u!1 &8247639355181104165
 GameObject:
   m_ObjectHideFlags: 0
