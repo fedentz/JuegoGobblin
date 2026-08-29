@@ -7,6 +7,7 @@ namespace Project.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(EnemyVision))]
+    [RequireComponent(typeof(EnemyHearing))]
     [RequireComponent(typeof(EnemyPatrol))]
     public class EnemyController : MonoBehaviour
     {
@@ -43,9 +44,11 @@ namespace Project.Enemy
 
         public event Action<GobblinController> OnPlayerSpotted;
         public event Action OnPlayerLost;
+        public event Action OnNoiseHeard;
 
         private NavMeshAgent agent;
         private EnemyVision vision;
+        private EnemyHearing hearing;
         private EnemyPatrol patrol;
 
         private State state;
@@ -61,6 +64,7 @@ namespace Project.Enemy
         {
             agent = GetComponent<NavMeshAgent>();
             vision = GetComponent<EnemyVision>();
+            hearing = GetComponent<EnemyHearing>();
             patrol = GetComponent<EnemyPatrol>();
         }
 
@@ -93,7 +97,28 @@ namespace Project.Enemy
                 case State.Searching: TickSearching(visiblePlayer, checkedVision); break;
             }
 
+            if (state != State.Chasing) TickHearing();
+
             UpdateAnimator();
+        }
+
+        // Intersección de esferas a mano (sin física): distancia(enemigo, jugador) < radioRuido(jugador) + radioOido(enemigo).
+        // Si ya lo está viendo (Chasing) no hace falta escuchar; la vista manda.
+        private void TickHearing()
+        {
+            PlayerNoise heardPlayer = hearing.FindHeardPlayer();
+            if (heardPlayer == null) return;
+
+            if (state == State.Searching)
+            {
+                // Ya estaba investigando algo: refresca el destino con la fuente de ruido más reciente.
+                lastKnownPosition = heardPlayer.transform.position;
+                agent.SetDestination(lastKnownPosition);
+                stateTimer = searchWaitTime;
+                return;
+            }
+
+            EnterInvestigating(heardPlayer);
         }
 
         private void TickPatrol(GobblinController visiblePlayer, bool checkedVision)
@@ -189,13 +214,28 @@ namespace Project.Enemy
 
         private void EnterSearching()
         {
-            state = State.Searching;
-            chaseTarget = null;
-            agent.speed = patrolSpeed;
-            agent.SetDestination(lastKnownPosition);
-            stateTimer = searchWaitTime;
+            GoToInvestigate(lastKnownPosition);
             Debug.Log($"[Enemy] {name} perdió de vista al jugador -> Searching", this);
             OnPlayerLost?.Invoke();
+        }
+
+        private void EnterInvestigating(PlayerNoise heardPlayer)
+        {
+            GoToInvestigate(heardPlayer.transform.position);
+            Debug.Log($"[Enemy] {name} escuchó a {heardPlayer.name} -> investigando", this);
+            OnNoiseHeard?.Invoke();
+        }
+
+        private void GoToInvestigate(Vector3 point)
+        {
+            state = State.Searching;
+            chaseTarget = null;
+            agent.updateRotation = true;
+            agent.isStopped = false;
+            agent.speed = patrolSpeed;
+            lastKnownPosition = point;
+            agent.SetDestination(point);
+            stateTimer = searchWaitTime;
         }
 
         private void TickSearching(GobblinController visiblePlayer, bool checkedVision)
