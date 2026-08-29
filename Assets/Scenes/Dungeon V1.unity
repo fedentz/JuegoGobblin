@@ -137339,6 +137339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Patrolling Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2224220921503623129, guid: 8c0bb00e599a24e4a862a8e936b6df07, type: 3}
+      propertyPath: radioOido
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5068158427503916505, guid: 8c0bb00e599a24e4a862a8e936b6df07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 100.61293
