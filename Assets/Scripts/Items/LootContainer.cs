@@ -6,7 +6,9 @@ namespace Project.Interaction
 {
     public class LootContainer : MonoBehaviour, IInteractable
     {
-        [SerializeField] private List<ItemData> items = new();
+        [SerializeField] private LootTable lootTable;
+        [SerializeField] private int minItems = 1;
+        [SerializeField] private int maxItems = 3;
 
         [Header("UI")]
         [Tooltip("Asignar en el Inspector la entrada localizada 'Search' / 'Buscar'.")]
@@ -21,7 +23,10 @@ namespace Project.Interaction
 
         private void Awake()
         {
-            queue = new Queue<ItemData>(items);
+            List<ItemData> rolled = lootTable != null
+                ? lootTable.RollItems(Random.Range(minItems, maxItems + 1))
+                : new List<ItemData>();
+            queue = new Queue<ItemData>(rolled);
         }
 
         public void Interact(GameObject interactor) { }

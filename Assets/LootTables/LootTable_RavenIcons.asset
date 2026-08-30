@@ -1,0 +1,327 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cbb7d91e4bf2439f4b40ff3be50b5, type: 3}
+  m_Name: LootTable_RavenIcons
+  m_EditorClassIdentifier: 
+  entries:
+  - item: {fileID: 11400000, guid: a80fd181074a89f44aac175428e77028, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: 12e4ddaf19af879478f8dbc11d9df4ed, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 5ba8e0d83e777aa46800ef33bbbf312b, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 790dfca971dd46343941883dbf8d8c97, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: e4f9171b1c8b32a4fbaee34b4345cd6d, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: 9fddd465d59eaf14b9a7d9e5648144ec, type: 2}
+    dropWeight: 1
+  - item: {fileID: 11400000, guid: 4379d94b07fab8f4a98d819646fe1928, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: a48d4ce2a8f12774d98ba0c5b0355bb6, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: b9650014ae237d74d82b58a2f993c70e, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 8ec63af845fc3d24fadf0dc686d4c339, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 7408bf76591a512499c740ba6722e85f, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 7cb3b397b161da945a7e743a5c34615a, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 6e8fbf94a66a23d4a8bb7cb793dad563, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 0b0ce49d41abda5468e6fdbc0acc53e1, type: 2}
+    dropWeight: 5.5
+  - item: {fileID: 11400000, guid: 46ec159a7f523134cb7d284e5ce40b3d, type: 2}
+    dropWeight: 4.5
+  - item: {fileID: 11400000, guid: 87a0564da3f8e244f9574c2ec5c2806d, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: ee4086ce30207c547bfd622ea8c90a1c, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 3520c635e46b3a140a3442be731a6fef, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 29230a596462297479daf302bb9b422c, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 480e52c18866e334d99392e51e59285c, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 62714e693c17df04283be3c4e018b24e, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: 21df5c1d4252a1d4ab7cb5a2962e854c, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 065436aa6f7433b40bc9365185108642, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 830638dca1599054d88ff88c1cfaf346, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 8bdccd6e1897a9b4f8fe90ecbd76bbf0, type: 2}
+    dropWeight: 2.8
+  - item: {fileID: 11400000, guid: 242bcbaa4aa04d8428f4694c1e92aac6, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: cbdbf05cdfb538d4fa685824bdf61e10, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 878644da75ec77744adb1b3905805d8a, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 434b272cacde7314cbfaf2b3dfedbe7f, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 7a7f48ce3b0bfb348a21e3c48158a660, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 87dc02d7041c08e4a8c0b3ace38fb136, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 4e0f617715e5e554e8fcfebde9c26d64, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 285329b18b9ff8d428203ede94ff5d4e, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 4de66b01b56218a46a94f45bc9186732, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: f57972ad409e5a540a2fed3e35aeb286, type: 2}
+    dropWeight: 9
+  - item: {fileID: 11400000, guid: ef1b57dd3edf50f4d9a3631ba147c9e9, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: b7c77e4a7044f5845a46a924e59ade57, type: 2}
+    dropWeight: 7
+  - item: {fileID: 11400000, guid: cc4e30a0a0a6a884eb5ee6597585568d, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: a66d623fc0a235a4a8a918edf4ee69cb, type: 2}
+    dropWeight: 1.5
+  - item: {fileID: 11400000, guid: fbc79e4636c0d3043be90d166888223e, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: fef7677615c389c46b9a1d1ec302938c, type: 2}
+    dropWeight: 2.2
+  - item: {fileID: 11400000, guid: 398fa420bbecc224d82fb0eeb9e96071, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: dca69b910f8455c4eae4ca9d99824433, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 47561e0fab2f41349a3ac3d2e295646f, type: 2}
+    dropWeight: 1.5
+  - item: {fileID: 11400000, guid: e1b778c326e80544f923fd5ab670ba7e, type: 2}
+    dropWeight: 1.2
+  - item: {fileID: 11400000, guid: 82dc888e772cb5a4cb276e5a801dfd54, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: cedba5fcb8f6d1b4baec2e07fbdb2b51, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: d9c049bae41fe2e439ab08baa8c8010b, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 03c3031ddf730654890e5cb42e2db85e, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 309e7ee08d38ca4408a13c320f28da21, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 942906f03229a0c47b289fc7501ee648, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 93017384be940f147a69a7443e352349, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: ba54a12156195b740b0f098b529b6680, type: 2}
+    dropWeight: 2.2
+  - item: {fileID: 11400000, guid: 0190b2325759e994684c4a2aaf0450f1, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 63a75ca1522f6034ca091be8e44b213d, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: d81115cf554a99d428c59f997d7e4be3, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: f1f5c3ba5ca29614a89f4e159801ef95, type: 2}
+    dropWeight: 3.2
+  - item: {fileID: 11400000, guid: daa7e49712b979a47b7c525c38091975, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: e77b0d849de21f1409ee362764afafd3, type: 2}
+    dropWeight: 2.3
+  - item: {fileID: 11400000, guid: b303ba78bec363b4caaf8456b6969f85, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: b434d4b9cabe0c54b839c5390c7de9b2, type: 2}
+    dropWeight: 7
+  - item: {fileID: 11400000, guid: 812963833f1f94f418d5372ada4aabe5, type: 2}
+    dropWeight: 6.5
+  - item: {fileID: 11400000, guid: e714a82406f03f048a3e21683baca0c0, type: 2}
+    dropWeight: 6.5
+  - item: {fileID: 11400000, guid: 4938d3f2ac18dba488c3577a8b2218b9, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 9b4c080e78839224c8588c09155e0cb2, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 1ae724d11d405ca4b87dc09ed715c3e2, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: 1e4ab9a766a3c664fb4038a7857b623d, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: 87da9ac5531343d4fa415b5c1ab79333, type: 2}
+    dropWeight: 7.5
+  - item: {fileID: 11400000, guid: d39a0080b11e53c45967a59dd261b8d1, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: 385f9c91d1912224aabac21441ed0345, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 8b95cb449e7f90944b8510eeea438877, type: 2}
+    dropWeight: 7.5
+  - item: {fileID: 11400000, guid: b2de5549576b5904eacfcbe55b08c34b, type: 2}
+    dropWeight: 7
+  - item: {fileID: 11400000, guid: 0d72f1d27ea8786408a3230705c7cde3, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: f47f12e19651c5e47b8ed9e8e0f272e2, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 81894c009edfb8d4a83b374cd51900ef, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: d57af69755a6e3b4da5c66e599140387, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: bc561f979a21e4f4da9a02c197934bf5, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: c78ef5f7959b216448d86497ecb1b468, type: 2}
+    dropWeight: 2.3
+  - item: {fileID: 11400000, guid: 01b8348b8028edb40a6782a84a51cc7d, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: c049423833dc8964ba328207545fd4e8, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: 0417efc2964c0ef4d97ec94387509da9, type: 2}
+    dropWeight: 3.5
+  - item: {fileID: 11400000, guid: f5ebae37b33efc2428868eb46aeeed47, type: 2}
+    dropWeight: 3.2
+  - item: {fileID: 11400000, guid: 2594fd312834af4418ef437a7b0d08f7, type: 2}
+    dropWeight: 2.8
+  - item: {fileID: 11400000, guid: 4c3a80cc671e9eb489d944585f964c16, type: 2}
+    dropWeight: 2.6
+  - item: {fileID: 11400000, guid: 554d0cd9c31dca14f8513712f022bdfe, type: 2}
+    dropWeight: 3.2
+  - item: {fileID: 11400000, guid: 8ef6fc02202b29e41ad7983a58eb280f, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 1300df69442cdcf45a15e5e84da782ba, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 4a26e64d82c278a42be3769e0fd3064a, type: 2}
+    dropWeight: 3.3
+  - item: {fileID: 11400000, guid: 2088b5635065a9d4985914f04d2e9ff2, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: a79dd14f0b053de4cb39273b53466456, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: a149cd18e36af8f4d91923e1f656c3cd, type: 2}
+    dropWeight: 5.2
+  - item: {fileID: 11400000, guid: 0a7c6d251b1e01a4fa7d97fa2f3151ef, type: 2}
+    dropWeight: 4.8
+  - item: {fileID: 11400000, guid: e01c5b7ac25ebcd42b6b39f9c8a10d9f, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: a39e5899b22354347b195c3ae19a082c, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 3d99430b38df80d42ae6ce93630327c9, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: 7334a234af7f21642a70ddcef3f62911, type: 2}
+    dropWeight: 2.2
+  - item: {fileID: 11400000, guid: 3c2f0d0d0fa86144c8b187fe4baec3cd, type: 2}
+    dropWeight: 4.5
+  - item: {fileID: 11400000, guid: 7c19c45eb12c072458a4603650546a27, type: 2}
+    dropWeight: 2.6
+  - item: {fileID: 11400000, guid: b7074e09410f25448bf282020f595044, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: ba2a509443cd3f347866d8fab24b106f, type: 2}
+    dropWeight: 2.8
+  - item: {fileID: 11400000, guid: 14faabba785bd3446af3683a9b6b1665, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 402f460adb64d92408f08aba902f19a7, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 536ce7555ad08124ea15893b42cc47f8, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 80ee1165f5485ab4daaebe34d33c0ea8, type: 2}
+    dropWeight: 3.2
+  - item: {fileID: 11400000, guid: fe533d8b5a9cbd04780d36e8992f95ec, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: ef6f9533d82c7614d9b634a86eae0695, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: b222f04a8fcb6e14caa7fea1706b5b70, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 4f97caff03491e849848a480bdde4dc6, type: 2}
+    dropWeight: 1.5
+  - item: {fileID: 11400000, guid: 6a5ca88c5d6c5734b96fd092ca594ef2, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 51a7ea576742bd24690acf76a5e3f703, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 1d8a9df39b2e6a342810ed5f05c4bc7e, type: 2}
+    dropWeight: 1.5
+  - item: {fileID: 11400000, guid: 1bd24897e6054c6428dc08bf3c73e90a, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 0cb7de79483b54a4698372e9850bd496, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 32a705b2d9600f845a62a80a93f6109f, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: ba2438a43005d9b45a6d1cde2a5f3394, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: a4c84807c03cf064399dbf44579102c6, type: 2}
+    dropWeight: 5.5
+  - item: {fileID: 11400000, guid: ae6d044011ad0614f994f81db5181b21, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: dc9674ddc8133044387b959d4c68a653, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: a8bb0aa5e63d927448c98421a33c653b, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: bc1f5aac19d72114eb776828bef581c6, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: b04eb0bc460464942b10251c9f5029e8, type: 2}
+    dropWeight: 5.5
+  - item: {fileID: 11400000, guid: bfe901517094b994faa40ee86d8b3237, type: 2}
+    dropWeight: 5.5
+  - item: {fileID: 11400000, guid: 48043d3bcfa9cc841ab51d19c65d35a7, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: f571dbf2161cf2d45bc1ccda76a99660, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 327464d3e27ac9c4a86ed6f65a663231, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: 4c1b3fccc4f042d4391dd2e7596ffe4d, type: 2}
+    dropWeight: 5.5
+  - item: {fileID: 11400000, guid: 97dd06368f4009f4eafe286a11dc6922, type: 2}
+    dropWeight: 4.5
+  - item: {fileID: 11400000, guid: d02333d3dcccc074299ea9c4514718fc, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 5d1be16a048e9cd4f9c8d692b8986f5b, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: c31d46f22d7693f49acd1b86052e451f, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: 267020ff7de5fd243868a016bfee68bb, type: 2}
+    dropWeight: 5
+  - item: {fileID: 11400000, guid: 45961bd595460aa45bf305c371bdf8c5, type: 2}
+    dropWeight: 1.2
+  - item: {fileID: 11400000, guid: 62601688f9550aa43ae937c8af23e975, type: 2}
+    dropWeight: 1.2
+  - item: {fileID: 11400000, guid: da50ac0025915ac46acdd98fb690c35d, type: 2}
+    dropWeight: 1.3
+  - item: {fileID: 11400000, guid: fc74b8d45ac2eba4ea62b201577133ac, type: 2}
+    dropWeight: 1.4
+  - item: {fileID: 11400000, guid: 3aff439033ceb334e832c9c251ac9b3f, type: 2}
+    dropWeight: 0.8
+  - item: {fileID: 11400000, guid: f02139aa064a623489331db48b322aa2, type: 2}
+    dropWeight: 3
+  - item: {fileID: 11400000, guid: 786f29f8477775e4eb285d396eb5e780, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 3d6398a7b113d134f8e000232d083604, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: 2b832969f777a3646acb276153e4face, type: 2}
+    dropWeight: 1.8
+  - item: {fileID: 11400000, guid: 7b80edcf0cd81484a8b16e24e95402c5, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: 8f3543ad802b36a4dbe14106d531b97c, type: 2}
+    dropWeight: 2.5
+  - item: {fileID: 11400000, guid: 2a3049a8c9e3ae241bf1d7143b3b4452, type: 2}
+    dropWeight: 2.3
+  - item: {fileID: 11400000, guid: 02b65cb67f0da494481ba7b1905c7ea3, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: 7b8567f615027a949be70a549afefac8, type: 2}
+    dropWeight: 2.2
+  - item: {fileID: 11400000, guid: d7427e6609287de43b9388003d58a4d7, type: 2}
+    dropWeight: 1.8
+  - item: {fileID: 11400000, guid: a9b7029f63b5bad4e9f06005e64f28e4, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 9ed6049f61f871e46882ab3a68a48ffd, type: 2}
+    dropWeight: 10
+  - item: {fileID: 11400000, guid: a9d076c49bad57145882373a0bb44e3a, type: 2}
+    dropWeight: 8
+  - item: {fileID: 11400000, guid: 18731980c4b5e5946bc3a20351035f5b, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: d2348dc5ad726f04e9a5504cefa027d5, type: 2}
+    dropWeight: 1
+  - item: {fileID: 11400000, guid: 45ab181d7e653914183a4c3e4abe5749, type: 2}
+    dropWeight: 2
+  - item: {fileID: 11400000, guid: aedcd10a3b812384b9ba1b556bdb0df8, type: 2}
+    dropWeight: 6
+  - item: {fileID: 11400000, guid: 1f8a7db3762bc6d43b2619088c73bf9b, type: 2}
+    dropWeight: 4
+  - item: {fileID: 11400000, guid: 2e14e4301a4c6114da1e722ca4238ad3, type: 2}
+    dropWeight: 1.5
+  - item: {fileID: 11400000, guid: 7b14b70c43aeba040be489ff3d98b49a, type: 2}
+    dropWeight: 0.5

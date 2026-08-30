@@ -4,8 +4,8 @@ using Project.Spells;
 
 namespace Project.Interaction
 {
-    [System.Serializable]
-    public class ItemData
+    [CreateAssetMenu(fileName = "ItemData", menuName = "Loot/Item")]
+    public class ItemData : ScriptableObject
     {
         public LocalizedString itemName;
         public Sprite icon;

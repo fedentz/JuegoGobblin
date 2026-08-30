@@ -70,6 +70,646 @@ MonoBehaviour:
     m_Localized: Lumos
     m_Metadata:
       m_Items: []
+  - m_Id: 1480005289156608
+    m_Localized: Basic Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480162604916736
+    m_Localized: Basic Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480485352415232
+    m_Localized: Basic Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480667934662656
+    m_Localized: Basic Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827883295612928
+    m_Localized: Ice Crystal Shard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827884939780096
+    m_Localized: Metal Bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827885971578880
+    m_Localized: Silver Chalice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827886705582080
+    m_Localized: Golden Cup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827887477334016
+    m_Localized: Golden Lamp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888215531520
+    m_Localized: Royal Crown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888995672064
+    m_Localized: Purple Lantern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827889687732224
+    m_Localized: Oval Sapphire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827890425929728
+    m_Localized: Oval Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891130572800
+    m_Localized: Oval Ruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891831021568
+    m_Localized: Amber Gem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827892577607680
+    m_Localized: Round Sapphire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827893303222272
+    m_Localized: Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894062391296
+    m_Localized: Rough Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894788005888
+    m_Localized: Rough Diamond
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827895463288832
+    m_Localized: Rough Rose Quartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896121794560
+    m_Localized: Turquoise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896788688896
+    m_Localized: Fire Opal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827897443000320
+    m_Localized: Aquamarine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898109894656
+    m_Localized: Topaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898852286464
+    m_Localized: Minor Health Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900001525760
+    m_Localized: Greater Health Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900718751744
+    m_Localized: Blue Eye Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827901444366336
+    m_Localized: Arcane Eye Brooch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902190952448
+    m_Localized: Dark Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902920761344
+    m_Localized: Golden Eye Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827903679930368
+    m_Localized: Sealed Red Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827904451682304
+    m_Localized: Sealed Blue Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905194074112
+    m_Localized: Sealed Green Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905907105792
+    m_Localized: Sealed Purple Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827906624331776
+    m_Localized: Fire Spell Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827907396083712
+    m_Localized: Shadow Spell Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827908260110336
+    m_Localized: Nature Spell Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909040250880
+    m_Localized: Ice Spell Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909770059776
+    m_Localized: Rusty Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827910738944000
+    m_Localized: Steel Cross Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827911879794688
+    m_Localized: Steel Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827912647352320
+    m_Localized: Poison Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827913389744128
+    m_Localized: Golden Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827914425737216
+    m_Localized: Flaming Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827915327512576
+    m_Localized: Arcane Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916019572736
+    m_Localized: Bomb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916795518976
+    m_Localized: Fire Chakram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827917592436736
+    m_Localized: Superior Life Elixir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827918351605760
+    m_Localized: Golden Spellbook
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827919375015936
+    m_Localized: Ice Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920025133056
+    m_Localized: Ice Short Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920692027392
+    m_Localized: Ice Longsword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827921367310336
+    m_Localized: Ice Rapier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922030010368
+    m_Localized: Ice Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922768207872
+    m_Localized: Ice Spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827923430907904
+    m_Localized: Ice Greatsword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924131356672
+    m_Localized: Ice Trident
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924844388352
+    m_Localized: Ice Mace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827925637111808
+    m_Localized: Ice Double Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827926362726400
+    m_Localized: Ice War Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927155449856
+    m_Localized: Ice Sickle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927952367616
+    m_Localized: Ice Scythe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827928736702464
+    m_Localized: Ice Hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827929789472768
+    m_Localized: Short Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827930439589888
+    m_Localized: War Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931089707008
+    m_Localized: War Hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931764989952
+    m_Localized: Double Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827932519964672
+    m_Localized: Wooden Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933212024832
+    m_Localized: Red Gem Wand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933866336256
+    m_Localized: Steel Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827934554202112
+    m_Localized: Small Hatchet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935250456576
+    m_Localized: Small Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935984459776
+    m_Localized: War Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827936844292096
+    m_Localized: Ruby Scepter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827937657987072
+    m_Localized: Silver Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827938551373824
+    m_Localized: Combat Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939339902976
+    m_Localized: Fire Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939998408704
+    m_Localized: Poison Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827940644331520
+    m_Localized: Green Elven Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941307031552
+    m_Localized: Arcane Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941961342976
+    m_Localized: Fire Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827942624043008
+    m_Localized: Arcane Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943299325952
+    m_Localized: Crimson Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943957831680
+    m_Localized: Sapphire Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827944679251968
+    m_Localized: Amber Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827945509724160
+    m_Localized: Ruby Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946185007104
+    m_Localized: Enchanted Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946835124224
+    m_Localized: Elemental Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827947527184384
+    m_Localized: Emerald Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827948236021760
+    m_Localized: Ruby Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949024550912
+    m_Localized: Sapphire Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949808885760
+    m_Localized: Silver Amber Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827950505140224
+    m_Localized: Silver Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951197200384
+    m_Localized: Blue Leather Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951885066240
+    m_Localized: Leather Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827952551960576
+    m_Localized: Warrior Tunic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827953290158080
+    m_Localized: Blue Chainmail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954087075840
+    m_Localized: Blue Plate Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954783330304
+    m_Localized: Royal Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827955462807552
+    m_Localized: Knight Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956138090496
+    m_Localized: Light Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956842733568
+    m_Localized: Dark Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827957585125376
+    m_Localized: Ice Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958264602624
+    m_Localized: Frost Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958923108352
+    m_Localized: Ice Chestplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827959581614080
+    m_Localized: Ice Cuirass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960252702720
+    m_Localized: Glacial Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960919597056
+    m_Localized: Ice Breastplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827961599074304
+    m_Localized: Crossed Ice Swords
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827962316300288
+    m_Localized: Steel Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963016749056
+    m_Localized: Bronze Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963713003520
+    m_Localized: Golden Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827964430229504
+    m_Localized: Steel Pauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965147455488
+    m_Localized: Bronze Pauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965927596032
+    m_Localized: Golden Pauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827966623850496
+    m_Localized: Steel Gauntlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827967336882176
+    m_Localized: Bronze Gauntlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968028942336
+    m_Localized: Crossed Bones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968762945536
+    m_Localized: Bone Chestplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827969606000640
+    m_Localized: Bone Mask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971011092480
+    m_Localized: Skull Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971812204544
+    m_Localized: Stone Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827972575567872
+    m_Localized: Stone Gauntlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827973296988160
+    m_Localized: Stone Boot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827974098100224
+    m_Localized: Stone Chestplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827975138287616
+    m_Localized: Stone Pauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976023285760
+    m_Localized: Stone Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976962809856
+    m_Localized: Stone Ring with Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827978422427648
+    m_Localized: Enchanted Rock Fragment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827979949154304
+    m_Localized: Stone Great Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827981530406912
+    m_Localized: Golem Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827984214761472
+    m_Localized: Royal Cape
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985057816576
+    m_Localized: Hunter's Quiver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985871511552
+    m_Localized: Wooden Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827986567766016
+    m_Localized: Reinforced Wooden Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987268214784
+    m_Localized: Large Ruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987985440768
+    m_Localized: Large Sapphire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827988694278144
+    m_Localized: Large Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827989482807296
+    m_Localized: Large Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827990309085184
+    m_Localized: Large Diamond
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991147945984
+    m_Localized: Blue Crystal Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991995195392
+    m_Localized: Ice Tome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827992829861888
+    m_Localized: Fire and Shadow Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827993723248640
+    m_Localized: Blazing Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827994566303744
+    m_Localized: Fire and Ice Elemental Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827995463884800
+    m_Localized: Dark Sapphire Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827996294356992
+    m_Localized: Royal Amber Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997141606400
+    m_Localized: Ruby and Sapphire Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997963689984
+    m_Localized: Royal Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827998789967872
+    m_Localized: Golden Ring with Sapphire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827999607857152
+    m_Localized: Simple Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828000341860352
+    m_Localized: Copper Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828001386242048
+    m_Localized: Silver Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002157993984
+    m_Localized: Gold Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002917163008
+    m_Localized: Platinum Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828003630194688
+    m_Localized: Mixed Coin Pile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828004347420672
+    m_Localized: Copper Coin Pile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005106589696
+    m_Localized: Silver Coin Pile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005844787200
+    m_Localized: Gold Coin Pile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828006511681536
+    m_Localized: Platinum Coin Pile
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

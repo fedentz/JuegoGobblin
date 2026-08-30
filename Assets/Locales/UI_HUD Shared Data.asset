@@ -67,6 +67,646 @@ MonoBehaviour:
     m_Key: Lumos
     m_Metadata:
       m_Items: []
+  - m_Id: 1480005289156608
+    m_Key: "Item_Basic_Sword\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480162604916736
+    m_Key: Item_Basic_Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480485352415232
+    m_Key: Item_Basic_Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480667934662656
+    m_Key: Item_Basic_Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827883295612928
+    m_Key: Item_CristaldeHielo_fc20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827884939780096
+    m_Key: Item_CubodeMetal_fc50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827885971578880
+    m_Key: "Item_C\xE1lizdePlata_fc52"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827886705582080
+    m_Key: Item_CopaDorada_fc66
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827887477334016
+    m_Key: "Item_L\xE1mparaDorada_fc67"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888215531520
+    m_Key: Item_CoronaReal_fc69
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888995672064
+    m_Key: "Item_LinternaP\xFArpura_fc91"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827889687732224
+    m_Key: Item_ZafiroOvalado_fc161
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827890425929728
+    m_Key: Item_EsmeraldaOvalada_fc162
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891130572800
+    m_Key: "Item_Rub\xEDOvalado_fc163"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891831021568
+    m_Key: "Item_Gemade\xC1mbar_fc164"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827892577607680
+    m_Key: Item_ZafiroRedondo_fc165
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827893303222272
+    m_Key: Item_Amatista_fc166
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894062391296
+    m_Key: Item_EsmeraldaenBruto_fc167
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894788005888
+    m_Key: Item_DiamanteenBruto_fc168
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827895463288832
+    m_Key: Item_CuarzoRosaenBruto_fc169
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896121794560
+    m_Key: Item_Turquesa_fc170
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896788688896
+    m_Key: "Item_\xD3palodeFuego_fc171"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827897443000320
+    m_Key: Item_Aguamarina_fc172
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898109894656
+    m_Key: Item_Topacio_fc199
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898852286464
+    m_Key: "Item_Poci\xF3ndeVidaMenor_fc285"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900001525760
+    m_Key: "Item_Poci\xF3ndeVidaMayor_fc286"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900718751744
+    m_Key: Item_AmuletodelOjoAzul_fc293
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827901444366336
+    m_Key: Item_BrochedelOjoArcano_fc294
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902190952448
+    m_Key: Item_AmuletoOscuro_fc295
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902920761344
+    m_Key: Item_AmuletoDoradodelOjo_fc296
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827903679930368
+    m_Key: Item_PergaminoSelladoRojo_fc297
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827904451682304
+    m_Key: Item_PergaminoSelladoAzul_fc298
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905194074112
+    m_Key: Item_PergaminoSelladoVerde_fc299
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905907105792
+    m_Key: "Item_PergaminoSelladoP\xFArpura_fc300"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827906624331776
+    m_Key: Item_PergaminodeHechizodeFuego_fc301
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827907396083712
+    m_Key: Item_PergaminodeHechizoOscuro_fc302
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827908260110336
+    m_Key: Item_PergaminodeHechizodeNaturaleza_fc303
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909040250880
+    m_Key: Item_PergaminodeHechizodeHielo_fc304
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909770059776
+    m_Key: Item_EspadaOxidada_fc401
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827910738944000
+    m_Key: Item_EscudodeAceroconCruz_fc664
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827911879794688
+    m_Key: Item_EspadadeAcero_fc671
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827912647352320
+    m_Key: Item_EspadaEnvenenada_fc722
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827913389744128
+    m_Key: Item_EspadaDorada_fc727
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827914425737216
+    m_Key: "Item_EspadaFlam\xEDgera_fc730"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827915327512576
+    m_Key: Item_EspadaArcana_fc735
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916019572736
+    m_Key: Item_Bomba_fc764
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916795518976
+    m_Key: Item_ChakramdeFuego_fc942
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827917592436736
+    m_Key: Item_ElixirdeVidaSuperior_fc959
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827918351605760
+    m_Key: Item_LibrodeHechizosDorado_fc983
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827919375015936
+    m_Key: Item_DagadeHielo_fc1606
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920025133056
+    m_Key: Item_EspadaCortadeHielo_fc1607
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920692027392
+    m_Key: Item_EspadaLargadeHielo_fc1609
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827921367310336
+    m_Key: Item_EstoquedeHielo_fc1614
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922030010368
+    m_Key: Item_HachadeHielo_fc1617
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922768207872
+    m_Key: Item_LanzadeHielo_fc1620
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827923430907904
+    m_Key: "Item_Espad\xF3ndeHielo_fc1621"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924131356672
+    m_Key: Item_TridentedeHielo_fc1622
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924844388352
+    m_Key: Item_MazadeHielo_fc1625
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827925637111808
+    m_Key: Item_HachaDobledeHielo_fc1626
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827926362726400
+    m_Key: Item_HachadeGuerradeHielo_fc1627
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927155449856
+    m_Key: Item_HozdeHielo_fc1634
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927952367616
+    m_Key: "Item_Guada\xF1adeHielo_fc1635"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827928736702464
+    m_Key: Item_MartillodeHielo_fc1637
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827929789472768
+    m_Key: Item_EspadaCorta_fc1777
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827930439589888
+    m_Key: Item_HachadeGuerra_fc1778
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931089707008
+    m_Key: Item_MartillodeGuerra_fc1779
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931764989952
+    m_Key: Item_HachaDoble_fc1780
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827932519964672
+    m_Key: Item_ArcodeMadera_fc1781
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933212024832
+    m_Key: Item_VaritaconGemaRoja_fc1782
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933866336256
+    m_Key: Item_DagadeAcero_fc1783
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827934554202112
+    m_Key: Item_Hachuela_fc1784
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935250456576
+    m_Key: "Item_HachaPeque\xF1a_fc1786"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935984459776
+    m_Key: Item_ArcodeGuerra_fc1789
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827936844292096
+    m_Key: "Item_CetroR\xFAb\xED_fc1790"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827937657987072
+    m_Key: "Item_Pu\xF1aldePlata_fc1791"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827938551373824
+    m_Key: Item_HachadeCombate_fc1792
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939339902976
+    m_Key: Item_ArcodeFuego_fc1793
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939998408704
+    m_Key: Item_ArcoVenenoso_fc1794
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827940644331520
+    m_Key: "Item_Arco\xC9lficoVerde_fc1805"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941307031552
+    m_Key: Item_ArcoArcano_fc1806
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941961342976
+    m_Key: Item_AmuletodeFuego_fc1837
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827942624043008
+    m_Key: Item_AmuletoArcano_fc1838
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943299325952
+    m_Key: "Item_AmuletoCarmes\xED_fc1839"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943957831680
+    m_Key: Item_AnillodeZafiro_fc1843
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827944679251968
+    m_Key: "Item_Anillode\xC1mbar_fc1844"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827945509724160
+    m_Key: "Item_AnillodeRub\xED_fc1845"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946185007104
+    m_Key: Item_AnilloEncantado_fc1846
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946835124224
+    m_Key: Item_AnilloElemental_fc1847
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827947527184384
+    m_Key: Item_AmuletoconEsmeralda_fc1848
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827948236021760
+    m_Key: "Item_AmuletoconRub\xED_fc1849"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949024550912
+    m_Key: Item_AmuletoconZafiro_fc1850
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949808885760
+    m_Key: "Item_AmuletodePlatacon\xC1mbar_fc1851"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827950505140224
+    m_Key: Item_AmuletodePlata_fc1852
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951197200384
+    m_Key: Item_ArmaduradeCueroAzul_fc1859
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951885066240
+    m_Key: Item_ArmaduradeCuero_fc1860
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827952551960576
+    m_Key: "Item_T\xFAnicadeGuerrero_fc1861"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827953290158080
+    m_Key: Item_CotadeMallaAzul_fc1865
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954087075840
+    m_Key: Item_ArmaduradePlacasAzul_fc1866
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954783330304
+    m_Key: Item_ArmaduraReal_fc1867
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827955462807552
+    m_Key: Item_ArmaduradeCaballero_fc1868
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956138090496
+    m_Key: Item_ArmaduraLigera_fc1869
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956842733568
+    m_Key: Item_ArmaduraOscura_fc1872
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827957585125376
+    m_Key: Item_ArmaduradeHielo_fc1893
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958264602624
+    m_Key: Item_ArmaduradeEscarcha_fc1894
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958923108352
+    m_Key: Item_PetodeHielo_fc1895
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827959581614080
+    m_Key: Item_CorazadeHielo_fc1896
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960252702720
+    m_Key: Item_ArmaduraGlacial_fc1897
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960919597056
+    m_Key: Item_PecheradeHielo_fc1903
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827961599074304
+    m_Key: Item_EspadasCruzadasdeHielo_fc1904
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827962316300288
+    m_Key: Item_CascodeAcero_fc1905
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963016749056
+    m_Key: Item_CascodeBronce_fc1909
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963713003520
+    m_Key: Item_CascoDorado_fc1911
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827964430229504
+    m_Key: Item_HombreradeAcero_fc1921
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965147455488
+    m_Key: Item_HombreradeBronce_fc1925
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965927596032
+    m_Key: Item_HombreraDorada_fc1927
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827966623850496
+    m_Key: Item_GuanteletedeAcero_fc1937
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827967336882176
+    m_Key: Item_GuanteletedeBronce_fc1941
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968028942336
+    m_Key: Item_HuesosCruzados_fc2050
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968762945536
+    m_Key: "Item_Peto\xD3seo_fc2051"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827969606000640
+    m_Key: "Item_M\xE1scaradeHueso_fc2052"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971011092480
+    m_Key: "Item_CascodeCr\xE1neo_fc2053"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971812204544
+    m_Key: Item_CascodePiedra_fc2054
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827972575567872
+    m_Key: Item_GuantedePiedra_fc2056
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827973296988160
+    m_Key: Item_BotadePiedra_fc2057
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827974098100224
+    m_Key: Item_PetodePiedra_fc2059
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827975138287616
+    m_Key: Item_HombreradePiedra_fc2060
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976023285760
+    m_Key: Item_AnillodePiedra_fc2061
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976962809856
+    m_Key: Item_AnillodePiedraconEsmeralda_fc2062
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827978422427648
+    m_Key: Item_FragmentodeRocaEncantada_fc2070
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827979949154304
+    m_Key: Item_YelmodePiedra_fc2075
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827981530406912
+    m_Key: "Item_CascodeG\xF3lem_fc2076"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827984214761472
+    m_Key: Item_CapaReal_fc2084
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985057816576
+    m_Key: Item_AljabadeCazador_fc2094
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985871511552
+    m_Key: Item_EscudodeMadera_fc2113
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827986567766016
+    m_Key: Item_EscudodeMaderaReforzado_fc2114
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987268214784
+    m_Key: "Item_Rub\xEDGrande_fc2117"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987985440768
+    m_Key: Item_ZafiroGrande_fc2119
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827988694278144
+    m_Key: Item_EsmeraldaGrande_fc2120
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827989482807296
+    m_Key: Item_AmatistaGrande_fc2121
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827990309085184
+    m_Key: Item_DiamanteGrande_fc2134
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991147945984
+    m_Key: Item_EscudodeCristalAzul_fc2145
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991995195392
+    m_Key: Item_TomodeHielo_fc2148
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827992829861888
+    m_Key: Item_AmuletodeFuegoySombra_fc2170
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827993723248640
+    m_Key: Item_AmuletoLlameante_fc2172
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827994566303744
+    m_Key: Item_AnilloElementaldeHieloyFuego_fc2178
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827995463884800
+    m_Key: Item_AnillodeZafiroOscuro_fc2179
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827996294356992
+    m_Key: "Item_Anillode\xC1mbarReal_fc2181"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997141606400
+    m_Key: "Item_AnillodeRub\xEDyZafiro_fc2182"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997963689984
+    m_Key: Item_AnilloReal_fc2183
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827998789967872
+    m_Key: Item_AnilloDoradoconZafiro_fc2184
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827999607857152
+    m_Key: Item_AnilloSencillo_fc2185
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828000341860352
+    m_Key: Item_MonedadeCobre_fc129
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828001386242048
+    m_Key: Item_MonedadePlata_fc130
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002157993984
+    m_Key: Item_MonedadeOro_fc131
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002917163008
+    m_Key: Item_MonedadePlatino_fc132
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828003630194688
+    m_Key: Item_PiladeMonedasMixtas_fc133
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828004347420672
+    m_Key: Item_PiladeMonedasdeCobre_fc134
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005106589696
+    m_Key: Item_PiladeMonedasdePlata_fc135
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005844787200
+    m_Key: Item_PiladeMonedasdeOro_fc136
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828006511681536
+    m_Key: Item_PiladeMonedasdePlatino_fc137
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
