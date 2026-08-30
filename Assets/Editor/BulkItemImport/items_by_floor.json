@@ -1,0 +1,799 @@
+﻿{
+    "floors":  [
+                   {
+                       "floor":  "1er Piso",
+                       "items":  [
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1805",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc942",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1865",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1606",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc131",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1869",
+                                         "dropWeight":  4.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc52",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1909",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1925",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1941",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1789",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Escudo",
+                                         "filenameStem":  "fc2114",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2062",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1861",
+                                         "dropWeight":  4.8
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc168",
+                                         "dropWeight":  4.5
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc135",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1859",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc91",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc671",
+                                         "dropWeight":  7
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc20",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2094",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1852",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1860",
+                                         "dropWeight":  5.2
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1781",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2076",
+                                         "dropWeight":  4.5
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc167",
+                                         "dropWeight":  5.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc764",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1905",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1921",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc298",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc300",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc297",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc299",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1779",
+                                         "dropWeight":  6.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2070",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1937",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1792",
+                                         "dropWeight":  7
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1780",
+                                         "dropWeight":  6.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2053",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1778",
+                                         "dropWeight":  7
+                                     },
+                                     {
+                                         "category":  "Escudo",
+                                         "filenameStem":  "fc2113",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc169",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2051",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1791",
+                                         "dropWeight":  7.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2075",
+                                         "dropWeight":  5.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1777",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Pocion",
+                                         "filenameStem":  "fc285",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2185",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2052",
+                                         "dropWeight":  5.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2059",
+                                         "dropWeight":  5.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1783",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1786",
+                                         "dropWeight":  7.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2054",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2060",
+                                         "dropWeight":  5.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc401",
+                                         "dropWeight":  9
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1784",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc134",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2057",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2056",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2061",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2050",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc130",
+                                         "dropWeight":  8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc50",
+                                         "dropWeight":  6
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc129",
+                                         "dropWeight":  10
+                                     }
+                                 ]
+                   },
+                   {
+                       "floor":  "2do Piso",
+                       "items":  [
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1904",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc171",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1838",
+                                         "dropWeight":  2.3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2183",
+                                         "dropWeight":  2.2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2084",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2181",
+                                         "dropWeight":  2.3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc722",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Escudo",
+                                         "filenameStem":  "fc2145",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc163",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1837",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1866",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc66",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2179",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1897",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1635",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc165",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc295",
+                                         "dropWeight":  2.8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1847",
+                                         "dropWeight":  2.6
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1872",
+                                         "dropWeight":  2.6
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1806",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1622",
+                                         "dropWeight":  2.2
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc162",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc161",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc133",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc293",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1846",
+                                         "dropWeight":  2.8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1894",
+                                         "dropWeight":  2.8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2148",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1637",
+                                         "dropWeight":  2.3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1793",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1621",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc166",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1849",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1893",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc294",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1626",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1850",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1896",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1794",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1627",
+                                         "dropWeight":  2.5
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc199",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1848",
+                                         "dropWeight":  3.2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1895",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1609",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc164",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1790",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1620",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1845",
+                                         "dropWeight":  3.2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1903",
+                                         "dropWeight":  3.2
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1614",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1625",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc172",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1851",
+                                         "dropWeight":  3.3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1617",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1843",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc301",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc304",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc303",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc302",
+                                         "dropWeight":  3
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1634",
+                                         "dropWeight":  3.2
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1607",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc1782",
+                                         "dropWeight":  3.5
+                                     },
+                                     {
+                                         "category":  "Escudo",
+                                         "filenameStem":  "fc664",
+                                         "dropWeight":  5
+                                     },
+                                     {
+                                         "category":  "Pocion",
+                                         "filenameStem":  "fc286",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc170",
+                                         "dropWeight":  4
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1844",
+                                         "dropWeight":  3.5
+                                     }
+                                 ]
+                   },
+                   {
+                       "floor":  "3er Piso",
+                       "items":  [
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc137",
+                                         "dropWeight":  0.5
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc2134",
+                                         "dropWeight":  0.8
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc136",
+                                         "dropWeight":  1.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc69",
+                                         "dropWeight":  1
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc2117",
+                                         "dropWeight":  1.2
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc2119",
+                                         "dropWeight":  1.2
+                                     },
+                                     {
+                                         "category":  "Moneda",
+                                         "filenameStem":  "fc132",
+                                         "dropWeight":  1
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc2120",
+                                         "dropWeight":  1.3
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc983",
+                                         "dropWeight":  1.2
+                                     },
+                                     {
+                                         "category":  "Gema",
+                                         "filenameStem":  "fc2121",
+                                         "dropWeight":  1.4
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc727",
+                                         "dropWeight":  1.5
+                                     },
+                                     {
+                                         "category":  "Pocion",
+                                         "filenameStem":  "fc959",
+                                         "dropWeight":  1.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1911",
+                                         "dropWeight":  1.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1927",
+                                         "dropWeight":  1.5
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2184",
+                                         "dropWeight":  1.8
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc730",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc296",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1867",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2172",
+                                         "dropWeight":  1.8
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2170",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2182",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Arma",
+                                         "filenameStem":  "fc735",
+                                         "dropWeight":  2.2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1839",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc2178",
+                                         "dropWeight":  2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc1868",
+                                         "dropWeight":  2.2
+                                     },
+                                     {
+                                         "category":  "Otro",
+                                         "filenameStem":  "fc67",
+                                         "dropWeight":  2
+                                     }
+                                 ]
+                   }
+               ]
+}
