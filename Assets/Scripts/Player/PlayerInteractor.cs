@@ -119,6 +119,12 @@ namespace Project.Player
                     Debug.Log("Te alejaste, el ítem vuelve al final de la cola");
                     ItemResolved?.Invoke();
                 }
+
+                if (previousTarget is LootContainer previousLoot)
+                {
+                    previousLoot.CloseLid();
+                }
+
                 ResetHoldState();
                 TargetChanged?.Invoke(currentTarget);
             }

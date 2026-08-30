@@ -10,6 +10,10 @@ namespace Project.Interaction
         [SerializeField] private int minItems = 1;
         [SerializeField] private int maxItems = 3;
 
+        [Header("Tapa")]
+        [Tooltip("Se abre al sacar el primer ítem. Opcional: dejar vacío si el cofre no tiene tapa animada.")]
+        [SerializeField] private ChestLid lid;
+
         [Header("UI")]
         [Tooltip("Asignar en el Inspector la entrada localizada 'Search' / 'Buscar'.")]
         [SerializeField] private LocalizedString actionVerb;
@@ -33,12 +37,20 @@ namespace Project.Interaction
 
         public ItemData TakeCurrent()
         {
-            return queue.Count > 0 ? queue.Dequeue() : null;
+            if (queue.Count == 0) return null;
+
+            lid?.Open();
+            return queue.Dequeue();
         }
 
         public void ReturnItem(ItemData item)
         {
             if (item != null) queue.Enqueue(item);
+        }
+
+        public void CloseLid()
+        {
+            lid?.Close();
         }
     }
 }
