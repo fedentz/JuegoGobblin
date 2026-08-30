@@ -42,6 +42,12 @@ namespace Project.UI
         [Tooltip("4 sprites de fondo, uno por color de jugador (índice 0-3). Se aplica una sola vez.")]
         [SerializeField] private Sprite[] backgroundSpritesByPlayer;
 
+        [Header("Resaltado del slot seleccionado (tinte sobre el mismo fondo)")]
+        [Tooltip("Color del fondo cuando ESE slot está seleccionado Y tiene un hechizo cargado.")]
+        [SerializeField] private Color colorSeleccionado = Color.white;
+        [Tooltip("Color del fondo en cualquier otro caso: no seleccionado, o seleccionado pero vacío.")]
+        [SerializeField] private Color colorNoSeleccionado = new Color(0.55f, 0.55f, 0.55f, 1f);
+
         private int playerColorIndex;
 
         private void OnEnable()
@@ -49,9 +55,11 @@ namespace Project.UI
             if (caster == null) return;
             caster.SlotChanged += HandleSlotChanged;
             caster.SlotCooldownChanged += HandleCooldownChanged;
+            caster.SelectedSlotChanged += HandleSelectedSlotChanged;
 
             CachePlayerColorIndex();
             ApplyBackgroundColor();
+            ApplyHighlight(caster.SelectedSlot);
 
             // Estado inicial: refleja lo que ya tenga cada slot al activarse la UI.
             for (int i = 0; i < slots.Length; i++)
@@ -65,11 +73,33 @@ namespace Project.UI
             if (caster == null) return;
             caster.SlotChanged -= HandleSlotChanged;
             caster.SlotCooldownChanged -= HandleCooldownChanged;
+            caster.SelectedSlotChanged -= HandleSelectedSlotChanged;
         }
 
         private void HandleSlotChanged(int index, SpellData spell)
         {
             ApplySlot(index, spell);
+            ApplyHighlight(caster.SelectedSlot);
+        }
+
+        private void HandleSelectedSlotChanged(int index)
+        {
+            ApplyHighlight(index);
+        }
+
+        private void ApplyHighlight(int selectedIndex)
+        {
+            if (slotBackgrounds == null) return;
+
+            for (int i = 0; i < slotBackgrounds.Length; i++)
+            {
+                if (slotBackgrounds[i] == null) continue;
+
+                bool tieneHechizo = caster.GetSlot(i) != null;
+                bool estaSeleccionado = i == selectedIndex;
+
+                slotBackgrounds[i].color = (estaSeleccionado && tieneHechizo) ? colorSeleccionado : colorNoSeleccionado;
+            }
         }
 
         private void ApplySlot(int index, SpellData spell)

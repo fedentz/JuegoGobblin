@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79dbd208689845458d676f0cd59cff2, type: 3}
+  m_Name: Hechizo_Run
+  m_EditorClassIdentifier: 
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:1c58fb9057a02dd47a2411470dffcfb5
+    m_TableEntryReference:
+      m_KeyId: 152467703689216
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 26967c0420dbe9340b8796c511a2a85b, type: 3}
+  effectType: 0
+  efecto: {fileID: 11400000, guid: 480faeb4c1ad7d146a9021cce1e12f15, type: 2}
+  consumable: 1
+  cooldownDuration: 0
+  sonidoAlCastear: {fileID: 0}
+  animacionTrigger: 
+  glowVfxPrefab: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
