@@ -70,6 +70,646 @@ MonoBehaviour:
     m_Localized: Lumos
     m_Metadata:
       m_Items: []
+  - m_Id: 1480005289156608
+    m_Localized: Espada Basica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480162604916736
+    m_Localized: Escudo Basico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480485352415232
+    m_Localized: Arco Basico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1480667934662656
+    m_Localized: Hacha Basica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827883295612928
+    m_Localized: Cristal de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827884939780096
+    m_Localized: Cubo de Metal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827885971578880
+    m_Localized: "C\xE1liz de Plata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827886705582080
+    m_Localized: Copa Dorada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827887477334016
+    m_Localized: "L\xE1mpara Dorada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888215531520
+    m_Localized: Corona Real
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827888995672064
+    m_Localized: "Linterna P\xFArpura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827889687732224
+    m_Localized: Zafiro Ovalado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827890425929728
+    m_Localized: Esmeralda Ovalada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891130572800
+    m_Localized: "Rub\xED Ovalado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827891831021568
+    m_Localized: "Gema de \xC1mbar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827892577607680
+    m_Localized: Zafiro Redondo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827893303222272
+    m_Localized: Amatista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894062391296
+    m_Localized: Esmeralda en Bruto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827894788005888
+    m_Localized: Diamante en Bruto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827895463288832
+    m_Localized: Cuarzo Rosa en Bruto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896121794560
+    m_Localized: Turquesa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827896788688896
+    m_Localized: "\xD3palo de Fuego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827897443000320
+    m_Localized: Aguamarina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898109894656
+    m_Localized: Topacio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827898852286464
+    m_Localized: "Poci\xF3n de Vida Menor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900001525760
+    m_Localized: "Poci\xF3n de Vida Mayor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827900718751744
+    m_Localized: Amuleto del Ojo Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827901444366336
+    m_Localized: Broche del Ojo Arcano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902190952448
+    m_Localized: Amuleto Oscuro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827902920761344
+    m_Localized: Amuleto Dorado del Ojo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827903679930368
+    m_Localized: Pergamino Sellado Rojo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827904451682304
+    m_Localized: Pergamino Sellado Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905194074112
+    m_Localized: Pergamino Sellado Verde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827905907105792
+    m_Localized: "Pergamino Sellado P\xFArpura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827906624331776
+    m_Localized: Pergamino de Hechizo de Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827907396083712
+    m_Localized: Pergamino de Hechizo Oscuro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827908260110336
+    m_Localized: Pergamino de Hechizo de Naturaleza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909040250880
+    m_Localized: Pergamino de Hechizo de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827909770059776
+    m_Localized: Espada Oxidada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827910738944000
+    m_Localized: Escudo de Acero con Cruz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827911879794688
+    m_Localized: Espada de Acero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827912647352320
+    m_Localized: Espada Envenenada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827913389744128
+    m_Localized: Espada Dorada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827914425737216
+    m_Localized: "Espada Flam\xEDgera"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827915327512576
+    m_Localized: Espada Arcana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916019572736
+    m_Localized: Bomba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827916795518976
+    m_Localized: Chakram de Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827917592436736
+    m_Localized: Elixir de Vida Superior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827918351605760
+    m_Localized: Libro de Hechizos Dorado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827919375015936
+    m_Localized: Daga de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920025133056
+    m_Localized: Espada Corta de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827920692027392
+    m_Localized: Espada Larga de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827921367310336
+    m_Localized: Estoque de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922030010368
+    m_Localized: Hacha de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827922768207872
+    m_Localized: Lanza de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827923430907904
+    m_Localized: "Espad\xF3n de Hielo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924131356672
+    m_Localized: Tridente de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827924844388352
+    m_Localized: Maza de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827925637111808
+    m_Localized: Hacha Doble de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827926362726400
+    m_Localized: Hacha de Guerra de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927155449856
+    m_Localized: Hoz de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827927952367616
+    m_Localized: "Guada\xF1a de Hielo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827928736702464
+    m_Localized: Martillo de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827929789472768
+    m_Localized: Espada Corta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827930439589888
+    m_Localized: Hacha de Guerra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931089707008
+    m_Localized: Martillo de Guerra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827931764989952
+    m_Localized: Hacha Doble
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827932519964672
+    m_Localized: Arco de Madera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933212024832
+    m_Localized: Varita con Gema Roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827933866336256
+    m_Localized: Daga de Acero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827934554202112
+    m_Localized: Hachuela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935250456576
+    m_Localized: "Hacha Peque\xF1a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827935984459776
+    m_Localized: Arco de Guerra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827936844292096
+    m_Localized: "Cetro R\xFAb\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827937657987072
+    m_Localized: "Pu\xF1al de Plata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827938551373824
+    m_Localized: Hacha de Combate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939339902976
+    m_Localized: Arco de Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827939998408704
+    m_Localized: Arco Venenoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827940644331520
+    m_Localized: "Arco \xC9lfico Verde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941307031552
+    m_Localized: Arco Arcano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827941961342976
+    m_Localized: Amuleto de Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827942624043008
+    m_Localized: Amuleto Arcano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943299325952
+    m_Localized: "Amuleto Carmes\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827943957831680
+    m_Localized: Anillo de Zafiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827944679251968
+    m_Localized: "Anillo de \xC1mbar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827945509724160
+    m_Localized: "Anillo de Rub\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946185007104
+    m_Localized: Anillo Encantado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827946835124224
+    m_Localized: Anillo Elemental
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827947527184384
+    m_Localized: Amuleto con Esmeralda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827948236021760
+    m_Localized: "Amuleto con Rub\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949024550912
+    m_Localized: Amuleto con Zafiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827949808885760
+    m_Localized: "Amuleto de Plata con \xC1mbar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827950505140224
+    m_Localized: Amuleto de Plata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951197200384
+    m_Localized: Armadura de Cuero Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827951885066240
+    m_Localized: Armadura de Cuero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827952551960576
+    m_Localized: "T\xFAnica de Guerrero"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827953290158080
+    m_Localized: Cota de Malla Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954087075840
+    m_Localized: Armadura de Placas Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827954783330304
+    m_Localized: Armadura Real
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827955462807552
+    m_Localized: Armadura de Caballero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956138090496
+    m_Localized: Armadura Ligera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827956842733568
+    m_Localized: Armadura Oscura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827957585125376
+    m_Localized: Armadura de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958264602624
+    m_Localized: Armadura de Escarcha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827958923108352
+    m_Localized: Peto de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827959581614080
+    m_Localized: Coraza de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960252702720
+    m_Localized: Armadura Glacial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827960919597056
+    m_Localized: Pechera de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827961599074304
+    m_Localized: Espadas Cruzadas de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827962316300288
+    m_Localized: Casco de Acero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963016749056
+    m_Localized: Casco de Bronce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827963713003520
+    m_Localized: Casco Dorado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827964430229504
+    m_Localized: Hombrera de Acero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965147455488
+    m_Localized: Hombrera de Bronce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827965927596032
+    m_Localized: Hombrera Dorada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827966623850496
+    m_Localized: Guantelete de Acero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827967336882176
+    m_Localized: Guantelete de Bronce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968028942336
+    m_Localized: Huesos Cruzados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827968762945536
+    m_Localized: "Peto \xD3seo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827969606000640
+    m_Localized: "M\xE1scara de Hueso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971011092480
+    m_Localized: "Casco de Cr\xE1neo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827971812204544
+    m_Localized: Casco de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827972575567872
+    m_Localized: Guante de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827973296988160
+    m_Localized: Bota de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827974098100224
+    m_Localized: Peto de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827975138287616
+    m_Localized: Hombrera de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976023285760
+    m_Localized: Anillo de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827976962809856
+    m_Localized: Anillo de Piedra con Esmeralda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827978422427648
+    m_Localized: Fragmento de Roca Encantada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827979949154304
+    m_Localized: Yelmo de Piedra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827981530406912
+    m_Localized: "Casco de G\xF3lem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827984214761472
+    m_Localized: Capa Real
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985057816576
+    m_Localized: Aljaba de Cazador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827985871511552
+    m_Localized: Escudo de Madera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827986567766016
+    m_Localized: Escudo de Madera Reforzado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987268214784
+    m_Localized: "Rub\xED Grande"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827987985440768
+    m_Localized: Zafiro Grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827988694278144
+    m_Localized: Esmeralda Grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827989482807296
+    m_Localized: Amatista Grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827990309085184
+    m_Localized: Diamante Grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991147945984
+    m_Localized: Escudo de Cristal Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827991995195392
+    m_Localized: Tomo de Hielo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827992829861888
+    m_Localized: Amuleto de Fuego y Sombra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827993723248640
+    m_Localized: Amuleto Llameante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827994566303744
+    m_Localized: Anillo Elemental de Hielo y Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827995463884800
+    m_Localized: Anillo de Zafiro Oscuro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827996294356992
+    m_Localized: "Anillo de \xC1mbar Real"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997141606400
+    m_Localized: "Anillo de Rub\xED y Zafiro"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827997963689984
+    m_Localized: Anillo Real
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827998789967872
+    m_Localized: Anillo Dorado con Zafiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827999607857152
+    m_Localized: Anillo Sencillo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828000341860352
+    m_Localized: Moneda de Cobre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828001386242048
+    m_Localized: Moneda de Plata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002157993984
+    m_Localized: Moneda de Oro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828002917163008
+    m_Localized: Moneda de Platino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828003630194688
+    m_Localized: Pila de Monedas Mixtas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828004347420672
+    m_Localized: Pila de Monedas de Cobre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005106589696
+    m_Localized: Pila de Monedas de Plata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828005844787200
+    m_Localized: Pila de Monedas de Oro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828006511681536
+    m_Localized: Pila de Monedas de Platino
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
