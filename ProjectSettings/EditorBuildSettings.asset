@@ -5,15 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: 55f1e1367552692419777b1ce90699c9
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 5b06ec8aae394174e88be2dcb819adba
   - enabled: 1
     path: Assets/Scenes/Dungeon V1.unity
     guid: 11f5f44e1baec434fa13953def0b5c9d
+  - enabled: 1
+    path: Assets/Scenes/Menu/Inspiration.unity
+    guid: 7af7f2094bdc24249bc188ffed6b92c8
+  - enabled: 1
+    path: Assets/Scenes/Menu/Creditos.unity
+    guid: db20cf8f4b088724a92173bf29278314
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 424d95df57ec64c4a91c630e8aff2c07, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
