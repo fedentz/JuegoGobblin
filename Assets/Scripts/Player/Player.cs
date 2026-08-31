@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,6 +35,10 @@ namespace Project.Player
         [SerializeField] private float minPitch = -80f;
         [SerializeField] private float maxPitch = 80f;
 
+        [Header("Encogerse (offset de cámara)")]
+        [Tooltip("Cuánto baja la cámara respecto a su posición normal cuando la escala llega a 0. Ajustable a mano, sin importar si Camera Rig tiene Y=0.")]
+        [SerializeField] private float alturaOjosParaEncogerse = 0.8f;
+
         [Header("Animator Speed Steps")]
         [Tooltip("Valores que le mandamos al parámetro Speed (decide Idle/Walking/Running)")]
         [SerializeField] private float animSpeedIdle = 0f;
@@ -50,26 +53,34 @@ namespace Project.Player
         private bool jumpQueued;
         private bool isSneaking;
         private bool isRunBoostActive;
-        private Coroutine runBoostCoroutine;
+        private Vector3 cameraRigPosicionOriginal;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
             playerInput = GetComponent<PlayerInput>();
+            if (cameraRig != null) cameraRigPosicionOriginal = cameraRig.localPosition;
         }
 
-        // Llamado por PlayerSpellCaster cuando se usa el hechizo/scroll de correr.
-        public void ActivateTemporaryRun(float duration)
+        // Llamado por PlayerSpellCaster (Encogerse): baja/sube la altura de la cámara.
+        // Usa un offset propio (alturaOjosParaEncogerse) en vez de escalar la posición
+        // actual, porque Camera Rig puede tener Y=0 (altura viene de otro lado de la
+        // jerarquía) y escalar un 0 sigue dando 0.
+        public void AjustarAlturaCamara(float escala)
         {
-            if (runBoostCoroutine != null) StopCoroutine(runBoostCoroutine);
-            runBoostCoroutine = StartCoroutine(RunBoostRoutine(duration));
+            if (cameraRig == null) return;
+            float offset = alturaOjosParaEncogerse * (1f - escala);
+            cameraRig.localPosition = new Vector3(
+                cameraRigPosicionOriginal.x,
+                cameraRigPosicionOriginal.y - offset,
+                cameraRigPosicionOriginal.z);
         }
 
-        private IEnumerator RunBoostRoutine(float duration)
+        // Llamado por PlayerSpellCaster: prende/apaga el boost. La duración
+        // ahora la maneja PlayerSpellCaster (RevertirTrasDuracion), no este script.
+        public void SetRunBoost(bool activo)
         {
-            isRunBoostActive = true;
-            yield return new WaitForSeconds(duration);
-            isRunBoostActive = false;
+            isRunBoostActive = activo;
         }
 
         private void EnsureAnimatorController()

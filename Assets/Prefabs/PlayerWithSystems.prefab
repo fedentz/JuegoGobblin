@@ -4932,8 +4932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAnxiety: 100
-  tiempoQuietoParaEmpezar: 1.5
-  velocidadDeSubida: 4
+  tiempoQuietoParaEmpezar: 5
+  velocidadDeSubida: 0.5
   velocidadDeBajada: 7
   distanciaMinimaMovimiento: 1
 --- !u!114 &7763199354477255758
@@ -4950,11 +4950,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equiparParaTestingAlIniciar: 1
   hechizosParaTestear:
-  - {fileID: 11400000, guid: fe4fed73fead6ec45884564ecef1e494, type: 2}
-  - {fileID: 11400000, guid: d23fd1ec29dfc8940b450cf5e1e9e972, type: 2}
+  - {fileID: 11400000, guid: bef9a6a6157fe404ba3234cc651f3a86, type: 2}
+  - {fileID: 11400000, guid: e46a6eae6c054a64591807dd4ee755dd, type: 2}
+  - {fileID: 11400000, guid: a07bab61fbf8e684b84874afcb8f36fb, type: 2}
+  - {fileID: 11400000, guid: 395315f5ba72b674091d46f7bb3fb263, type: 2}
   flashlight: {fileID: 997473762990295787}
   gobblinController: {fileID: 709177300644086100}
   audioSource: {fileID: 0}
+  anxiety: {fileID: 1026178949871874613}
+  inventory: {fileID: 4295526063020775023}
+  health: {fileID: 98179395494148476}
+  gobblinVisual: {fileID: 4328791302067325008}
+  pushOrigin: {fileID: 4328059901265298411}
 --- !u!114 &7614604250284039363
 MonoBehaviour:
   m_ObjectHideFlags: 0

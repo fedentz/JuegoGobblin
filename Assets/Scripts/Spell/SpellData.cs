@@ -8,7 +8,6 @@ namespace Project.Spells
     {
         public LocalizedString displayName;
         public Sprite icon;
-        public SpellEffectType effectType; // sin uso por ahora, no lo tocamos todavía
         public HechizoEfectoBase efecto;   // quién ejecuta el comportamiento
 
         [Tooltip("true = se gasta después de un solo uso (scrolls). false = queda permanente (rituales).")]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Spells;
@@ -18,6 +19,16 @@ namespace Project.Player
         [SerializeField] private GobblinController gobblinController;
         [Tooltip("Opcional. Si está asignado, reproduce spell.sonidoAlCastear al castear.")]
         [SerializeField] private AudioSource audioSource;
+        [Tooltip("Usado por el efecto Relax para bajar la ansiedad. Vive en otro GameObject, hay que arrastrarlo a mano.")]
+        [SerializeField] private PlayerAnxiety anxiety;
+        [Tooltip("Usado por Strength (aumentar capacidad de carga). Vive en otro GameObject, hay que arrastrarlo a mano.")]
+        [SerializeField] private PlayerInventory inventory;
+        [Tooltip("Usado por Escudo (bloquear el próximo daño). Vive en otro GameObject, hay que arrastrarlo a mano.")]
+        [SerializeField] private PlayerHealth health;
+        [Tooltip("El modelo visual del gobblin (ej: GOBLIN_GREEN), NO el root del jugador. Usado por Encogerse e Invisibilidad.")]
+        [SerializeField] private Transform gobblinVisual;
+        [Tooltip("Punto desde donde se detecta a quién empujar con Push (ej: la cámara).")]
+        [SerializeField] private Transform pushOrigin;
 
         // index 0-3, spell es null cuando el slot está vacío (para que la UI actualice el ícono).
         public event Action<int, SpellData> SlotChanged;
@@ -28,7 +39,6 @@ namespace Project.Player
 
         private readonly SpellData[] slots = new SpellData[4];
         private readonly float[] cooldownEndTime = new float[4];
-        private bool flashlightOn;
         private int selectedSlot = 0;
 
         public SpellData GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
@@ -76,6 +86,24 @@ namespace Project.Player
             Debug.Log("No hay slots de hechizo libres");
         }
 
+        // Saca un hechizo del slot a mano (todavía no hay UI para esto, pero queda listo
+        // para cuando se arme un flujo de "cambiar hechizo"). Si era MientrasEquipado
+        // (ej: Strength), revierte su efecto antes de vaciar el slot.
+        public void UnlearnSpell(int index)
+        {
+            if (index < 0 || index >= slots.Length) return;
+            SpellData spell = slots[index];
+            if (spell == null) return;
+
+            if (spell.efecto != null && spell.efecto.TipoDuracion == TipoDuracion.MientrasEquipado)
+            {
+                spell.efecto.Revertir(this);
+            }
+
+            slots[index] = null;
+            SlotChanged?.Invoke(index, null);
+        }
+
         // Estas 4 acciones tienen que existir en el Input Actions asset (CastSlot1..4),
         // atadas a las teclas 1/2/3/4. SELECCIONAN, no castean.
         public void OnCastSlot1(InputValue value) => TrySelect(0, value);
@@ -121,6 +149,11 @@ namespace Project.Player
             {
                 spell.efecto.Ejecutar(this);
                 Debug.Log($"[PlayerSpellCaster] {gameObject.name} casteó slot {index}: efecto '{spell.efecto.name}'");
+
+                if (spell.efecto.TipoDuracion == TipoDuracion.Temporizado && spell.efecto.Duracion > 0f)
+                {
+                    StartCoroutine(RevertirTrasDuracion(spell.efecto, spell.efecto.Duracion));
+                }
             }
             else
             {
@@ -134,10 +167,28 @@ namespace Project.Player
                 slots[index] = null;
                 SlotChanged?.Invoke(index, null);
             }
-            else if (spell.cooldownDuration > 0f)
+            else if (spell.efecto != null && spell.efecto.TipoDuracion == TipoDuracion.MientrasEquipado)
             {
-                StartCooldown(index, spell.cooldownDuration);
+                // Sin cooldown: el efecto queda activo hasta que lo saquen del slot con UnlearnSpell.
             }
+            else
+            {
+                // Instantaneo: solo el cooldown propio. Temporizado: cooldown + duración
+                // (no podés volver a castear hasta que termine el efecto Y el cooldown).
+                float bloqueoTotal = spell.cooldownDuration;
+                if (spell.efecto != null && spell.efecto.TipoDuracion == TipoDuracion.Temporizado)
+                {
+                    bloqueoTotal += spell.efecto.Duracion;
+                }
+
+                if (bloqueoTotal > 0f) StartCooldown(index, bloqueoTotal);
+            }
+        }
+
+        private IEnumerator RevertirTrasDuracion(HechizoEfectoBase efecto, float duracion)
+        {
+            yield return new WaitForSeconds(duracion);
+            efecto.Revertir(this);
         }
 
         // Sonido ya cableado. Animación y glow quedan como TODO hasta que sumemos
@@ -159,16 +210,103 @@ namespace Project.Player
             SlotCooldownChanged?.Invoke(index, true);
         }
 
-        public void ToggleFlashlight()
+        // ---- Lumos ----
+        public void EncenderLuz()
         {
-            if (flashlight == null) return;
-            flashlightOn = !flashlightOn;
-            flashlight.enabled = flashlightOn;
+            if (flashlight != null) flashlight.enabled = true;
         }
 
-        public void ActivarRunBoost(float duracion)
+        public void ApagarLuz()
         {
-            if (gobblinController != null) gobblinController.ActivateTemporaryRun(duracion);
+            if (flashlight != null) flashlight.enabled = false;
+        }
+
+        // ---- Run / Aceleración ----
+        public void ActivarRunBoost()
+        {
+            if (gobblinController != null) gobblinController.SetRunBoost(true);
+        }
+
+        public void DesactivarRunBoost()
+        {
+            if (gobblinController != null) gobblinController.SetRunBoost(false);
+        }
+
+        // ---- Relax ----
+        public void ReducirAnsiedad(float cantidad)
+        {
+            if (anxiety != null) anxiety.ReduceAnxiety(cantidad);
+        }
+
+        // ---- Strength ----
+        public void AumentarCapacidadCarga(float multiplicador)
+        {
+            if (inventory != null) inventory.AumentarCapacidad(multiplicador);
+        }
+
+        public void QuitarCapacidadCarga(float multiplicador)
+        {
+            if (inventory != null) inventory.QuitarCapacidad(multiplicador);
+        }
+
+        // ---- Escudo ----
+        public void ActivarEscudo()
+        {
+            if (health != null) health.ActivarEscudo();
+        }
+
+        public void DesactivarEscudo()
+        {
+            if (health != null) health.DesactivarEscudo();
+        }
+
+        // ---- Encogerse ----
+        // Asume que la escala original del modelo es Vector3.one (ajustar si no es así).
+        // También baja la cámara para que el cambio de tamaño se note en primera persona.
+        public void Encoger(float escala)
+        {
+            if (gobblinVisual != null) gobblinVisual.localScale = Vector3.one * escala;
+            if (gobblinController != null) gobblinController.AjustarAlturaCamara(escala);
+        }
+
+        public void VolverATamanoNormal()
+        {
+            if (gobblinVisual != null) gobblinVisual.localScale = Vector3.one;
+            if (gobblinController != null) gobblinController.AjustarAlturaCamara(1f);
+        }
+
+        // ---- Invisibilidad ----
+        public void Ocultar()
+        {
+            if (gobblinVisual != null) gobblinVisual.gameObject.SetActive(false);
+        }
+
+        public void Mostrar()
+        {
+            if (gobblinVisual != null) gobblinVisual.gameObject.SetActive(true);
+        }
+
+        // ---- Push ----
+        // Empuja la primera entidad con Rigidbody que encuentre cerca de pushOrigin,
+        // en la dirección hacia adelante. Sin enemigos todavía, probalo con cualquier
+        // objeto suelto con Rigidbody (un barril, un jarrón, otro jugador).
+        public void EmpujarEntidadCercana(float radioDeteccion, float fuerza)
+        {
+            if (pushOrigin == null) return;
+
+            Vector3 centro = pushOrigin.position + pushOrigin.forward * radioDeteccion;
+            Collider[] hits = Physics.OverlapSphere(centro, radioDeteccion);
+
+            foreach (var hit in hits)
+            {
+                if (hit.transform.root == transform.root) continue; // no empujarse a sí mismo
+                Rigidbody rb = hit.attachedRigidbody;
+                if (rb == null) continue;
+
+                Vector3 direccion = (hit.transform.position - pushOrigin.position).normalized;
+                rb.AddForce(direccion * fuerza, ForceMode.Impulse);
+                break;
+            }
         }
 
         private void Update()

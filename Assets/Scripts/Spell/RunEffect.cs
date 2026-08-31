@@ -8,9 +8,10 @@ namespace Project.Spells
     {
         [SerializeField] private float duracion = 5f;
 
-        public override void Ejecutar(PlayerSpellCaster caster)
-        {
-            caster.ActivarRunBoost(duracion);
-        }
+        public override TipoDuracion TipoDuracion => TipoDuracion.Temporizado;
+        public override float Duracion => duracion;
+
+        public override void Ejecutar(PlayerSpellCaster caster) => caster.ActivarRunBoost();
+        public override void Revertir(PlayerSpellCaster caster) => caster.DesactivarRunBoost();
     }
 }

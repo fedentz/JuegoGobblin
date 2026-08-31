@@ -19,6 +19,25 @@ namespace Project.Player
         public event Action<float> OnWeightChanged;
         public event Action<bool> OnOverweightChanged; // avisa solo cuando CRUZA el umbral
 
+        private bool capacidadAumentada = false;
+
+        public void AumentarCapacidad(float multiplicador)
+        {
+            if (capacidadAumentada) return;
+            maxWeight *= multiplicador;
+            overweightThreshold *= multiplicador;
+            capacidadAumentada = true;
+        }
+
+        // Llamado por StrengthEfecto.Revertir cuando se saca el hechizo del slot (UnlearnSpell).
+        public void QuitarCapacidad(float multiplicador)
+        {
+            if (!capacidadAumentada) return;
+            maxWeight /= multiplicador;
+            overweightThreshold /= multiplicador;
+            capacidadAumentada = false;
+        }
+
         public bool TryAddItem(float weight)
         {
             if (CurrentWeight + weight > maxWeight) return false;
