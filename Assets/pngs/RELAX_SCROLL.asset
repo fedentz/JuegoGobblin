@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fa260ad194fd24e80a0ea26b43066f, type: 3}
+  m_Name: RELAX_SCROLL
+  m_EditorClassIdentifier: 
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:1c58fb9057a02dd47a2411470dffcfb5
+    m_TableEntryReference:
+      m_KeyId: 2346839144755200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 8f3d56716b3cf2642834f334e90401eb, type: 3}
+  weight: 0
+  value: 0
+  grantedSpell: {fileID: 11400000, guid: a07bab61fbf8e684b84874afcb8f36fb, type: 2}
+  references:
+    version: 2
+    RefIds: []
