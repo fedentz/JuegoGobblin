@@ -62,6 +62,16 @@ namespace Project.Player
             if (cameraRig != null) cameraRigPosicionOriginal = cameraRig.localPosition;
         }
 
+        private void OnEnable()
+        {
+            PlayerRegistry.Register(this);
+        }
+
+        private void OnDisable()
+        {
+            PlayerRegistry.Unregister(this);
+        }
+
         // Llamado por PlayerSpellCaster (Encogerse): baja/sube la altura de la cámara.
         // Usa un offset propio (alturaOjosParaEncogerse) en vez de escalar la posición
         // actual, porque Camera Rig puede tener Y=0 (altura viene de otro lado de la
