@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Spells;
+using Project.Interaction;
 
 namespace Project.Player
 {
@@ -29,6 +30,8 @@ namespace Project.Player
         [SerializeField] private Transform gobblinVisual;
         [Tooltip("Punto desde donde se detecta a quién empujar con Push (ej: la cámara).")]
         [SerializeField] private Transform pushOrigin;
+        [Tooltip("El GameObject del panel de mapa (Raw Image con la cámara top-down). Usado por Mapa.")]
+        [SerializeField] private GameObject mapaPanel;
 
         // index 0-3, spell es null cuando el slot está vacío (para que la UI actualice el ícono).
         public event Action<int, SpellData> SlotChanged;
@@ -40,10 +43,18 @@ namespace Project.Player
         private readonly SpellData[] slots = new SpellData[4];
         private readonly float[] cooldownEndTime = new float[4];
         private int selectedSlot = 0;
+        private Vector3 escalaOriginalGobblin = Vector3.one;
 
         public SpellData GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
         public bool IsSlotOnCooldown(int index) => index >= 0 && index < slots.Length && Time.time < cooldownEndTime[index];
         public int SelectedSlot => selectedSlot;
+
+        private void Awake()
+        {
+            // Guardamos la escala real del modelo (algunos personajes NO están en 1,
+            // como el gobblin verde que arranca en 2) para poder volver exactamente ahí.
+            if (gobblinVisual != null) escalaOriginalGobblin = gobblinVisual.localScale;
+        }
 
         private void Start()
         {
@@ -260,18 +271,55 @@ namespace Project.Player
             if (health != null) health.DesactivarEscudo();
         }
 
+        // ---- Curar ----
+        // Por hoy: self-heal. "Curar a un amigo" (apuntar a otro jugador) queda pendiente.
+        public void Curar(int cantidad)
+        {
+            if (health != null) health.Heal(cantidad);
+        }
+
+        // ---- Mapa ----
+        public void ToggleMapa()
+        {
+            if (mapaPanel == null) return;
+            mapaPanel.SetActive(!mapaPanel.activeSelf);
+        }
+
+        // ---- Apertura / Desbloquear ----
+        // Busca la puerta trabada más cercana (mismo patrón que Push: OverlapSphere
+        // desde pushOrigin) y la desbloquea. No la abre, solo le permite a Interact()
+        // romperla la próxima vez que el jugador use E.
+        public void DesbloquearPuertaCercana(float radioDeteccion)
+        {
+            if (pushOrigin == null) return;
+
+            Vector3 centro = pushOrigin.position + pushOrigin.forward * radioDeteccion;
+            Collider[] hits = Physics.OverlapSphere(centro, radioDeteccion);
+
+            foreach (var hit in hits)
+            {
+                Door door = hit.GetComponentInParent<Door>();
+                if (door != null)
+                {
+                    door.Desbloquear();
+                    break;
+                }
+            }
+        }
+
         // ---- Encogerse ----
-        // Asume que la escala original del modelo es Vector3.one (ajustar si no es así).
+        // Escala relativa a escalaOriginalGobblin (capturada en Awake), NO a Vector3.one:
+        // el gobblin verde arranca en escala 2, no en 1.
         // También baja la cámara para que el cambio de tamaño se note en primera persona.
         public void Encoger(float escala)
         {
-            if (gobblinVisual != null) gobblinVisual.localScale = Vector3.one * escala;
+            if (gobblinVisual != null) gobblinVisual.localScale = escalaOriginalGobblin * escala;
             if (gobblinController != null) gobblinController.AjustarAlturaCamara(escala);
         }
 
         public void VolverATamanoNormal()
         {
-            if (gobblinVisual != null) gobblinVisual.localScale = Vector3.one;
+            if (gobblinVisual != null) gobblinVisual.localScale = escalaOriginalGobblin;
             if (gobblinController != null) gobblinController.AjustarAlturaCamara(1f);
         }
 

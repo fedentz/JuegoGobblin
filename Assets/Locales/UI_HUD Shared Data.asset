@@ -707,6 +707,10 @@ MonoBehaviour:
     m_Key: Item_PiladeMonedasdePlatino_fc137
     m_Metadata:
       m_Items: []
+  - m_Id: 2231735128518656
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

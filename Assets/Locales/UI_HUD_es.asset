@@ -710,6 +710,10 @@ MonoBehaviour:
     m_Localized: Pila de Monedas de Platino
     m_Metadata:
       m_Items: []
+  - m_Id: 2231735128518656
+    m_Localized: Apertura
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

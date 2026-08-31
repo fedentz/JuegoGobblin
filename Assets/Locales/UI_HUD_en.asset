@@ -710,6 +710,10 @@ MonoBehaviour:
     m_Localized: Platinum Coin Pile
     m_Metadata:
       m_Items: []
+  - m_Id: 2231735128518656
+    m_Localized: Open Lock
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

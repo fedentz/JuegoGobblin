@@ -5,8 +5,9 @@ namespace Project.Interaction
 {
     public class Door : MonoBehaviour, IInteractable
     {
-        [SerializeField] private float openAngle = 90f;
-        [SerializeField] private float openSpeed = 2f;
+        [Header("Traba")]
+        [Tooltip("Si está trabada, Interact() no hace nada hasta que se llame a Desbloquear() (hechizo Apertura/Desbloquear).")]
+        [SerializeField] private bool trabada = false;
 
         [Header("UI")]
         [Tooltip("Asignar en el Inspector la entrada localizada 'Open' / 'Abrir'.")]
@@ -14,25 +15,26 @@ namespace Project.Interaction
 
         public LocalizedString ActionVerb => actionVerb;
 
-        private bool isOpen;
-        private Quaternion closedRot;
-        private Quaternion openRot;
-
-        private void Awake()
-        {
-            closedRot = transform.rotation;
-            openRot = closedRot * Quaternion.Euler(0f, openAngle, 0f);
-        }
+        private bool rota;
 
         public void Interact(GameObject interactor)
         {
-            isOpen = !isOpen;
+            if (trabada) return; // trabada: no se puede romper hasta desbloquearla
+            if (rota) return;
+            Romper();
         }
 
-        private void Update()
+        // Llamado por PlayerSpellCaster (hechizo Apertura/Desbloquear).
+        public void Desbloquear()
         {
-            Quaternion target = isOpen ? openRot : closedRot;
-            transform.rotation = Quaternion.Slerp(transform.rotation, target, openSpeed * Time.deltaTime);
+            trabada = false;
+        }
+
+        private void Romper()
+        {
+            rota = true;
+            // TODO: VFX/sonido de romper cuando haya tiempo. Por ahora, sin animación: desaparece.
+            gameObject.SetActive(false);
         }
     }
 }

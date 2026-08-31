@@ -37,7 +37,7 @@ namespace Project.Player
 
         [Header("Encogerse (offset de cámara)")]
         [Tooltip("Cuánto baja la cámara respecto a su posición normal cuando la escala llega a 0. Ajustable a mano, sin importar si Camera Rig tiene Y=0.")]
-        [SerializeField] private float alturaOjosParaEncogerse = 0.8f;
+        [SerializeField] private float alturaOjosParaEncogerse = 0.6f;
 
         [Header("Animator Speed Steps")]
         [Tooltip("Valores que le mandamos al parámetro Speed (decide Idle/Walking/Running)")]

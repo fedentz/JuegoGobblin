@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116, y: -155}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5042594403163356936
@@ -4839,6 +4839,7 @@ MonoBehaviour:
   gamepadSensitivity: 120
   minPitch: -80
   maxPitch: 80
+  alturaOjosParaEncogerse: 0.8
   animSpeedIdle: 0
   animSpeedWalk: 0.6
   animSpeedRun: 1
@@ -4951,9 +4952,7 @@ MonoBehaviour:
   equiparParaTestingAlIniciar: 1
   hechizosParaTestear:
   - {fileID: 11400000, guid: bef9a6a6157fe404ba3234cc651f3a86, type: 2}
-  - {fileID: 11400000, guid: e46a6eae6c054a64591807dd4ee755dd, type: 2}
-  - {fileID: 11400000, guid: a07bab61fbf8e684b84874afcb8f36fb, type: 2}
-  - {fileID: 11400000, guid: 395315f5ba72b674091d46f7bb3fb263, type: 2}
+  - {fileID: 11400000, guid: 94976cabe16d02a4d8af81bf75dd506b, type: 2}
   flashlight: {fileID: 997473762990295787}
   gobblinController: {fileID: 709177300644086100}
   audioSource: {fileID: 0}
@@ -4962,6 +4961,7 @@ MonoBehaviour:
   health: {fileID: 98179395494148476}
   gobblinVisual: {fileID: 4328791302067325008}
   pushOrigin: {fileID: 4328059901265298411}
+  mapaPanel: {fileID: 0}
 --- !u!114 &7614604250284039363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5036,7 +5036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168, y: -66}
+  m_AnchoredPosition: {x: 0, y: -34}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253515815441845163

@@ -788,6 +788,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1243468367718852518, guid: 37a563b7aa810754f8b6350909a6639f, type: 3}
+      propertyPath: trabada
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2768348552256479588, guid: 37a563b7aa810754f8b6350909a6639f, type: 3}
       propertyPath: m_Name
       value: Puerta
