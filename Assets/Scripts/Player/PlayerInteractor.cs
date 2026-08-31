@@ -154,7 +154,7 @@ namespace Project.Player
             {
                 if (interactAction.WasPressedThisFrame())
                 {
-                    bool added = inventory != null && inventory.TryAddItem(heldItem.weight);
+                    bool added = inventory != null && inventory.TryAddItem(heldItem.weight, heldItem.value);
                     if (added)
                     {
                         Debug.Log("Ítem agregado a la bolsa");

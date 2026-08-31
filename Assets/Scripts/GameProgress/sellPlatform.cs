@@ -20,6 +20,7 @@ namespace Project.Core
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log($"[SellPlatform] OnTriggerEnter SE LLAMÓ con: {other.name}"); // <- diagnóstico temporal
             PlayerInventory inventory = other.GetComponentInParent<PlayerInventory>();
             if (inventory == null) return;
 
