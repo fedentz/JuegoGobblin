@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 7354618056749120885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.076, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -366,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0e8cd8dc6c256e4287bb3bd6b656302, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0e8cd8dc6c256e4287bb3bd6b656302, type: 3}
       propertyPath: m_LocalPosition.z
@@ -434,7 +434,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Skeleton_Archer_metarig'\n\tTransform 'foot.R'\n\tTransform
+    'shoulder.R'\n\tTransform 'foot.L'\n\tTransform 'forearm.L'\n\tTransform 'spine.001'\n\tTransform
+    'shin.L'\n\tTransform 'spine.004'\n\tTransform 'spine.002'\n\tTransform 'upper_arm.R'\n\tand
+    more ...\n\tFrom animation clip 'Walking'\n\tFrom animation clip 'Attack'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
