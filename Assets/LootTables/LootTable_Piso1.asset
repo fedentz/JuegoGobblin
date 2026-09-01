@@ -141,3 +141,11 @@ MonoBehaviour:
     dropWeight: 6
   - item: {fileID: 11400000, guid: 9ed6049f61f871e46882ab3a68a48ffd, type: 2}
     dropWeight: 10
+  - item: {fileID: 11400000, guid: 69a7e71b6ed2c2546821d18c7c3ac458, type: 2}
+    dropWeight: 20
+  - item: {fileID: 11400000, guid: 6cd51f8903a9ea24ba5a60eb9e0250cc, type: 2}
+    dropWeight: 20
+  - item: {fileID: 11400000, guid: 62242c518084184439ae941996cae73e, type: 2}
+    dropWeight: 20
+  - item: {fileID: 11400000, guid: cf2bc324bd86d174cb515c91d641a739, type: 2}
+    dropWeight: 20
