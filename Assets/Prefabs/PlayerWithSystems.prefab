@@ -5122,9 +5122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equiparParaTestingAlIniciar: 1
-  hechizosParaTestear:
-  - {fileID: 11400000, guid: bef9a6a6157fe404ba3234cc651f3a86, type: 2}
-  - {fileID: 11400000, guid: 94976cabe16d02a4d8af81bf75dd506b, type: 2}
+  hechizosParaTestear: []
   flashlight: {fileID: 997473762990295787}
   gobblinController: {fileID: 709177300644086100}
   audioSource: {fileID: 0}
