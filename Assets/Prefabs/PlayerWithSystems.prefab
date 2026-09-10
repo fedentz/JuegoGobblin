@@ -5002,11 +5002,11 @@ MonoBehaviour:
   runSpeedMultiplier: 1.6
   inventory: {fileID: 4295526063020775023}
   overweightSpeedMultiplier: 0.6
-  jumpForce: 6
-  groundCheckRadius: 0.2
+  jumpForce: 5
+  groundCheckRadius: 0.5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   mouseSensitivity: 0.5
   gamepadSensitivity: 120
   minPitch: -80
