@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 674956857159332177}
   - component: {fileID: 4300723998436456028}
   - component: {fileID: 2224220921503623129}
+  - component: {fileID: 8161234567890123456}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Untagged
@@ -192,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 7354618056749120885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -275,6 +276,7 @@ MonoBehaviour:
   animator: {fileID: 7380843093256963460}
   patrolSpeed: 2.5
   chaseSpeed: 3.5
+  chaseStoppingDistance: 1.2
   detectionCheckInterval: 0.15
   loseSightGraceTime: 2.5
   searchWaitTime: 3
@@ -306,7 +308,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.9990011
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9419121, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2224220921503623129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +323,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radioOido: 8
   playerRefreshInterval: 1
+--- !u!136 &8161234567890123456
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354618056749120885}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9990011
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7813022735205311380
 GameObject:
   m_ObjectHideFlags: 0

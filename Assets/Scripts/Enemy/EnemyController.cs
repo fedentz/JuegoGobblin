@@ -19,6 +19,8 @@ namespace Project.Enemy
         [Header("Movimiento")]
         [SerializeField] private float patrolSpeed = 2.5f;
         [SerializeField] private float chaseSpeed = 4.5f;
+        [Tooltip("Distancia a la que se frena al perseguir, para no terminar encima del jugador. En patrulla/búsqueda se usa 0, así llega bien a los waypoints.")]
+        [SerializeField] private float chaseStoppingDistance = 1.2f;
 
         [Header("Detección")]
         [Tooltip("Cada cuántos segundos se revisa el cono de visión (perf).")]
@@ -72,6 +74,7 @@ namespace Project.Enemy
         {
             state = State.Patrol;
             agent.speed = patrolSpeed;
+            agent.stoppingDistance = 0f;
             lookBackTimer = lookBackCheckInterval;
         }
 
@@ -185,6 +188,7 @@ namespace Project.Enemy
             agent.updateRotation = true;
             agent.isStopped = false;
             agent.speed = chaseSpeed;
+            agent.stoppingDistance = chaseStoppingDistance;
             Debug.Log($"[Enemy] {name} detectó a {target.name} -> Chasing", this);
             OnPlayerSpotted?.Invoke(target);
         }
@@ -233,6 +237,7 @@ namespace Project.Enemy
             agent.updateRotation = true;
             agent.isStopped = false;
             agent.speed = patrolSpeed;
+            agent.stoppingDistance = 0f;
             lastKnownPosition = point;
             agent.SetDestination(point);
             stateTimer = searchWaitTime;
@@ -261,6 +266,7 @@ namespace Project.Enemy
             state = State.Patrol;
             chaseTarget = null;
             agent.speed = patrolSpeed;
+            agent.stoppingDistance = 0f;
             lookBackTimer = lookBackCheckInterval;
             if (patrol.HasWaypoints) patrol.ResetToClosest(transform.position);
         }
