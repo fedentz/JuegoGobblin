@@ -290,6 +290,11 @@ namespace Project.Enemy
             animator.SetFloat("Speed", speedParam);
         }
 
+        public void Knockback(Vector3 direccion, float distancia)
+        {
+            agent.Warp(transform.position + direccion.normalized * distancia);
+        }
+
         private void OnTriggerEnter(Collider other) => TryDealDamage(other);
 
         private void OnTriggerStay(Collider other) => TryDealDamage(other);

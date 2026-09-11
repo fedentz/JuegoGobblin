@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Spells;
 using Project.Interaction;
+using Project.Enemy;
 
 namespace Project.Player
 {
@@ -379,10 +380,19 @@ namespace Project.Player
             foreach (var hit in hits)
             {
                 if (hit.transform.root == transform.root) continue; // no empujarse a sí mismo
+
+                Vector3 direccion = (hit.transform.position - pushOrigin.position).normalized;
+
+                EnemyController enemy = hit.GetComponentInParent<EnemyController>();
+                if (enemy != null)
+                {
+                    enemy.Knockback(direccion, fuerza * 0.45f);
+                    break;
+                }
+
                 Rigidbody rb = hit.attachedRigidbody;
                 if (rb == null) continue;
 
-                Vector3 direccion = (hit.transform.position - pushOrigin.position).normalized;
                 rb.AddForce(direccion * fuerza, ForceMode.Impulse);
                 break;
             }
