@@ -137,19 +137,9 @@ MonoBehaviour:
     dropWeight: 3.5
   - item: {fileID: 11400000, guid: 9b4c080e78839224c8588c09155e0cb2, type: 2}
     dropWeight: 3.5
-  - item: {fileID: 11400000, guid: ef1b57dd3edf50f4d9a3631ba147c9e9, type: 2}
-    dropWeight: 5
   - item: {fileID: 11400000, guid: 21df5c1d4252a1d4ab7cb5a2962e854c, type: 2}
     dropWeight: 4
   - item: {fileID: 11400000, guid: ee4086ce30207c547bfd622ea8c90a1c, type: 2}
     dropWeight: 4
   - item: {fileID: 11400000, guid: 0417efc2964c0ef4d97ec94387509da9, type: 2}
     dropWeight: 3.5
-  - item: {fileID: 11400000, guid: 69a7e71b6ed2c2546821d18c7c3ac458, type: 2}
-    dropWeight: 20
-  - item: {fileID: 11400000, guid: 6cd51f8903a9ea24ba5a60eb9e0250cc, type: 2}
-    dropWeight: 20
-  - item: {fileID: 11400000, guid: 62242c518084184439ae941996cae73e, type: 2}
-    dropWeight: 20
-  - item: {fileID: 11400000, guid: cf2bc324bd86d174cb515c91d641a739, type: 2}
-    dropWeight: 20
