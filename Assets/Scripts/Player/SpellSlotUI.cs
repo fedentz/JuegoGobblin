@@ -16,12 +16,13 @@ namespace Project.UI
         {
             public Image typeIcon;   // SpelSlot_X_Type_Icon
             public Image spellIcon;  // SpelSlot_X_Spell_Icon
+            public Image oscurecer;  // SpelSlot_X_Oscurecer (overlay negro semitransparente)
         }
 
         [Header("Refs")]
         [SerializeField] private PlayerSpellCaster caster;
 
-        [Header("4 slots, en orden (arrastrar los Type_Icon y Spell_Icon de cada SpellSlot_X)")]
+        [Header("4 slots, en orden (arrastrar Type_Icon, Spell_Icon y Oscurecer de cada SpellSlot_X)")]
         [SerializeField] private SlotRefs[] slots = new SlotRefs[4];
 
         [Header("Sprites del Type_Icon (3 estados distintos, no un tinte)")]
@@ -89,14 +90,10 @@ namespace Project.UI
 
         private void ApplyHighlight(int selectedIndex)
         {
-            if (slotBackgrounds == null) return;
-
-            for (int i = 0; i < slotBackgrounds.Length; i++)
+            for (int i = 0; i < slots.Length; i++)
             {
-                if (slotBackgrounds[i] == null) continue;
-
-                bool estaSeleccionado = i == selectedIndex;
-                slotBackgrounds[i].color = estaSeleccionado ? colorSeleccionado : colorNoSeleccionado;
+                if (slots[i].oscurecer == null) continue;
+                slots[i].oscurecer.enabled = i != selectedIndex;
             }
         }
 
@@ -113,6 +110,7 @@ namespace Project.UI
                 Sprite frame = GetTypeSprite(spell, onCooldown);
                 refs.typeIcon.sprite = frame;
                 refs.typeIcon.enabled = frame != null;
+                refs.typeIcon.color = Color.white;
             }
 
             if (refs.spellIcon != null)
@@ -172,6 +170,7 @@ namespace Project.UI
                 Sprite frame = GetTypeSprite(spell, isOnCooldown);
                 refs.typeIcon.sprite = frame;
                 refs.typeIcon.enabled = frame != null;
+                refs.typeIcon.color = Color.white;
             }
         }
     }
