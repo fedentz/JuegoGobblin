@@ -70,19 +70,30 @@ namespace Project.Player
         private PlayerInput playerInput;
         private InputAction interactAction;
         private InputAction discardAction;
+        private PlayerSpellCaster spellCaster;
 
         private IInteractable currentTarget;
         private LootContainer currentLoot;
         private LootContainer lootWithPendingItem;
+        private SpellStone currentSpellStone;
         private float holdTimer;
         private ItemData heldItem;
         private bool waitingForRelease;
+
+        // Verdadero cuando el jugador ya tiene el hechizo de la SpellStone actual equipado.
+        public bool CurrentTargetAlreadyOwned => currentSpellStone != null && spellCaster != null && spellCaster.HasSpell(currentSpellStone.Spell);
+
+        // Verdadero cuando el target actual es una SpellStone, todos los slots están llenos,
+        // y el jugador NO tiene ya ese hechizo equipado.
+        public bool CurrentTargetRequiresHold => currentSpellStone != null && spellCaster != null
+            && spellCaster.AllSlotsFull && !spellCaster.HasSpell(currentSpellStone.Spell);
 
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
             interactAction = playerInput.actions["Interact"];
             discardAction = playerInput.actions["Discard"];
+            spellCaster = GetComponent<PlayerSpellCaster>();
         }
 
         private void Update()
@@ -96,8 +107,10 @@ namespace Project.Player
             }
 
             currentLoot = currentTarget as LootContainer;
+            currentSpellStone = currentTarget as SpellStone;
 
-            if (currentLoot != null) HandleLootInteraction();
+            if (currentSpellStone != null) HandleSpellStoneInteraction();
+            else if (currentLoot != null) HandleLootInteraction();
             else HandleSimpleInteraction();
         }
 
@@ -136,7 +149,47 @@ namespace Project.Player
             heldItem = null;
             lootWithPendingItem = null;
             currentLoot = null;
+            currentSpellStone = null;
             waitingForRelease = false;
+        }
+
+        private void HandleSpellStoneInteraction()
+        {
+            if (spellCaster == null || currentSpellStone == null) return;
+
+            // Prioridad máxima: el jugador ya tiene este hechizo — no hacer nada.
+            if (spellCaster.HasSpell(currentSpellStone.Spell)) return;
+
+            if (!spellCaster.AllSlotsFull)
+            {
+                // Slot libre: tap normal, igual que cualquier IInteractable simple.
+                if (interactAction.WasPressedThisFrame())
+                    currentSpellStone.Interact(gameObject);
+                return;
+            }
+
+            // Todos los slots llenos: hold para reemplazar el slot activo.
+            // Reutiliza holdThreshold, holdTimer y waitingForRelease del flujo de cofres.
+            if (waitingForRelease)
+            {
+                if (!interactAction.IsPressed()) waitingForRelease = false;
+                return;
+            }
+
+            if (interactAction.IsPressed())
+            {
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= holdThreshold)
+                {
+                    holdTimer = 0f;
+                    waitingForRelease = true;
+                    spellCaster.ReplaceSpell(spellCaster.SelectedSlot, currentSpellStone.Spell);
+                }
+            }
+            else
+            {
+                holdTimer = 0f;
+            }
         }
 
         private void HandleSimpleInteraction()

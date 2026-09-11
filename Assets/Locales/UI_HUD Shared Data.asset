@@ -723,6 +723,30 @@ MonoBehaviour:
     m_Key: New Entry 3
     m_Metadata:
       m_Items: []
+  - m_Id: 6265555406385152
+    m_Key: SpellStone_ReplaceVerb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6265692149084160
+    m_Key: Prompt_HoldPrefix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6265732968050688
+    m_Key: Spell_ReplacedFormat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6271911479832576
+    m_Key: Strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6272181047750656
+    m_Key: Shrink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6275764107440128
+    m_Key: Spell_AlreadyOwned
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

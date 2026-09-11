@@ -726,6 +726,30 @@ MonoBehaviour:
     m_Localized: Relax
     m_Metadata:
       m_Items: []
+  - m_Id: 6265555406385152
+    m_Localized: Replace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6265692149084160
+    m_Localized: Hold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6265732968050688
+    m_Localized: '{0} equipped!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6271911479832576
+    m_Localized: Strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6272181047750656
+    m_Localized: Shrink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6275764107440128
+    m_Localized: You already have this
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

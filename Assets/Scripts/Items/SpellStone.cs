@@ -11,10 +11,13 @@ namespace Project.Interaction
         [SerializeField] private SpellData spell;
 
         [Header("UI")]
-        [Tooltip("Asignar en el Inspector la entrada localizada 'Learn Ritual' / 'Aprender Ritual'.")]
+        [Tooltip("Verbo al aprender (slots libres). Ej: 'Aprender Ritual'.")]
         [SerializeField] private LocalizedString actionVerb;
+        [Tooltip("Verbo al reemplazar (slots llenos). Ej: 'Reemplazar Ritual'.")]
+        [SerializeField] private LocalizedString replaceVerb;
 
         public LocalizedString ActionVerb => actionVerb;
+        public LocalizedString ReplaceVerb => replaceVerb;
         public SpellData Spell => spell;
 
         public void Interact(GameObject interactor)

@@ -95,10 +95,8 @@ namespace Project.UI
             {
                 if (slotBackgrounds[i] == null) continue;
 
-                bool tieneHechizo = caster.GetSlot(i) != null;
                 bool estaSeleccionado = i == selectedIndex;
-
-                slotBackgrounds[i].color = (estaSeleccionado && tieneHechizo) ? colorSeleccionado : colorNoSeleccionado;
+                slotBackgrounds[i].color = estaSeleccionado ? colorSeleccionado : colorNoSeleccionado;
             }
         }
 
