@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Interaction;
@@ -38,26 +39,101 @@ namespace Project.Player
         // 0 cuando no se está manteniendo nada (el redondel de carga debería ocultarse).
         public float HoldProgress => holdThreshold > 0f ? Mathf.Clamp01(holdTimer / holdThreshold) : 0f;
 
+        // Mapeo de nombres genéricos de XInputController a nombres reales de Xbox.
+        // Solo se aplica cuando specificLayout.Contains("XInputController") (cubre "XInputControllerWindows" y variantes).
+        // Extendible: agregar entradas si se suman más botones al Input Actions asset.
+        private static readonly Dictionary<string, string> XInputDisplayNames = new()
+        {
+            { "Button West",   "X" },
+            { "Button North",  "Y" },
+            { "Button East",   "B" },
+            { "Button South",  "A" },
+            { "D-Pad Down",    "↓" },
+            { "D-Pad Left",    "←" },
+            { "D-Pad Right",   "→" },
+            { "D-Pad Up",      "↑" },
+            { "Right Trigger", "RT" },
+            { "Left Shoulder", "LB" },
+            { "Right Shoulder","RB" },
+        };
+
         private string GetGlyph(InputAction action, string fallback)
         {
             if (action == null) return fallback;
 
             bool usingGamepad = playerInput != null && playerInput.currentControlScheme != null
                 && playerInput.currentControlScheme.Contains("Gamepad");
-            string devicePathHint = usingGamepad ? "<Gamepad>" : "<Keyboard>";
 
-            // 1) Buscar el binding que coincida con el dispositivo activo de ESTE jugador.
-            for (int i = 0; i < action.bindings.Count; i++)
+            // Identificar el layout del gamepad asignado a ESTE jugador (no el global Gamepad.current).
+            // playerInput.devices contiene solo los dispositivos pareados con este PlayerInput específico.
+            string specificLayout = null;
+            if (usingGamepad && playerInput != null)
             {
-                string path = action.bindings[i].effectivePath;
-                if (path != null && path.Contains(devicePathHint))
+                foreach (var device in playerInput.devices)
                 {
-                    string display = action.GetBindingDisplayString(i);
-                    if (!string.IsNullOrEmpty(display)) return display;
+                    if (device is Gamepad)
+                    {
+                        specificLayout = device.layout; // ej. "XInputControllerWindows", "DualShockGamepad"
+                        break;
+                    }
                 }
             }
 
-            // 2) Si no encontramos uno para ese dispositivo, devolver el primer binding con texto.
+            // 1) Binding que coincida con el tipo base del gamepad de este jugador.
+            // El path usa el tipo base (ej. "<XInputController>") mientras que specificLayout
+            // puede ser una variante de plataforma (ej. "XInputControllerWindows").
+            // Solución: extraer el tipo entre < > del path y ver si specificLayout empieza con él.
+            if (usingGamepad && specificLayout != null)
+            {
+                for (int i = 0; i < action.bindings.Count; i++)
+                {
+                    string path = action.bindings[i].effectivePath;
+                    if (path == null) continue;
+                    int lt = path.IndexOf('<'), gt = path.IndexOf('>');
+                    string pathDeviceType = (lt >= 0 && gt > lt) ? path.Substring(lt + 1, gt - lt - 1) : null;
+                    if (pathDeviceType == null || !specificLayout.StartsWith(pathDeviceType)) continue;
+                    if (path.Contains("<Keyboard>") || path.Contains("<Mouse>") || path.Contains("<Gamepad>")) continue;
+
+                    string display = action.GetBindingDisplayString(i);
+                    if (string.IsNullOrEmpty(display)) continue;
+
+                    if (specificLayout.Contains("XInputController")
+                        && XInputDisplayNames.TryGetValue(display, out string friendly))
+                        return friendly;
+
+                    return display;
+                }
+            }
+
+            // 2) Fallback gamepad: cualquier binding que no sea teclado/mouse (cubre gamepads no contemplados).
+            if (usingGamepad)
+            {
+                for (int i = 0; i < action.bindings.Count; i++)
+                {
+                    string path = action.bindings[i].effectivePath;
+                    if (path != null && !path.Contains("<Keyboard>") && !path.Contains("<Mouse>"))
+                    {
+                        string display = action.GetBindingDisplayString(i);
+                        if (!string.IsNullOrEmpty(display)) return display;
+                    }
+                }
+            }
+
+            // 3) Teclado/mouse.
+            if (!usingGamepad)
+            {
+                for (int i = 0; i < action.bindings.Count; i++)
+                {
+                    string path = action.bindings[i].effectivePath;
+                    if (path != null && (path.Contains("<Keyboard>") || path.Contains("<Mouse>")))
+                    {
+                        string display = action.GetBindingDisplayString(i);
+                        if (!string.IsNullOrEmpty(display)) return display;
+                    }
+                }
+            }
+
+            // 4) Red de seguridad: primer binding con texto disponible.
             for (int i = 0; i < action.bindings.Count; i++)
             {
                 string display = action.GetBindingDisplayString(i);
