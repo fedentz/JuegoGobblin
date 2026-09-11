@@ -201,6 +201,14 @@ namespace Project.Enemy
                 return;
             }
 
+            // Null se chequea primero; IsDead solo se evalúa si el objeto todavía existe.
+            var targetHealth = chaseTarget.GetComponent<PlayerHealth>();
+            if (targetHealth != null && targetHealth.IsDead)
+            {
+                EnterSearching();
+                return;
+            }
+
             agent.SetDestination(chaseTarget.transform.position);
 
             if (!checkedVision) return;

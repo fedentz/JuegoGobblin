@@ -1,14 +1,10 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Project.Player;
 
 namespace Project.Core
 {
-    /// <summary>
-    /// Contador global compartido entre los 4 jugadores (juego local, mismo dispositivo,
-    /// no hace falta networking). Vive en la escena de Gameplay, se resetea cada partida.
-    /// Cuando se alcanza el objetivo, vuelve al Lobby (por ahora no hay Win Scene separada).
-    /// </summary>
     public class GameProgress : MonoBehaviour
     {
         public static GameProgress Instance { get; private set; }
@@ -23,13 +19,13 @@ namespace Project.Core
 
         public event Action<int, int> OnProgresoCambiado; // (totalVendido, objetivo)
         public event Action OnObjetivoCumplido;
+        public event Action OnAllPlayersDead;
 
         private bool objetivoYaCumplido;
+        private bool _allDeadFired;
 
         private void Awake()
         {
-            // Singleton simple. No usamos DontDestroyOnLoad porque esto vive SOLO
-            // durante la partida (se recrea/resetea cada vez que se carga Gameplay).
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -49,8 +45,27 @@ namespace Project.Core
             {
                 objetivoYaCumplido = true;
                 OnObjetivoCumplido?.Invoke();
-                VolverAlLobby();
+                // La navegación al Lobby ya no es automática: GameOverUIController
+                // escucha OnObjetivoCumplido y muestra la pantalla de victoria.
+                // El botón de esa pantalla llama VolverAlMenu() que hace el LoadScene.
             }
+        }
+
+        public void NotifyPlayerDeath()
+        {
+            if (_allDeadFired) return;
+
+            var players = PlayerRegistry.ActivePlayers;
+            if (players.Count == 0) return;
+
+            foreach (var player in players)
+            {
+                var ph = player.GetComponent<PlayerHealth>();
+                if (ph == null || !ph.IsDead) return;
+            }
+
+            _allDeadFired = true;
+            OnAllPlayersDead?.Invoke();
         }
 
         private void VolverAlLobby()

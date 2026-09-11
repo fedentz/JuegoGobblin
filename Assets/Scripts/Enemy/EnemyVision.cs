@@ -42,6 +42,9 @@ namespace Project.Enemy
                 GobblinController candidate = knownPlayers[i];
                 if (candidate == null) continue;
 
+                var health = candidate.GetComponent<PlayerHealth>();
+                if (health != null && health.IsDead) continue;
+
                 float distance = Vector3.Distance(transform.position, candidate.transform.position);
                 if (distance > viewRadius) continue;
                 if (distance >= closestDistance) continue;
