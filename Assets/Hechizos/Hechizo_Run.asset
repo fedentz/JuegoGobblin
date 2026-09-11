@@ -22,10 +22,9 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: 26967c0420dbe9340b8796c511a2a85b, type: 3}
-  effectType: 0
   efecto: {fileID: 11400000, guid: 480faeb4c1ad7d146a9021cce1e12f15, type: 2}
-  consumable: 1
-  cooldownDuration: 0
+  consumable: 0
+  cooldownDuration: 10
   sonidoAlCastear: {fileID: 0}
   animacionTrigger: 
   glowVfxPrefab: {fileID: 0}

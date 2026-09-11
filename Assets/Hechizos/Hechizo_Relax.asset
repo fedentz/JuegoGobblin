@@ -23,8 +23,8 @@ MonoBehaviour:
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: f897f810319016144a580c771a4b6614, type: 3}
   efecto: {fileID: 11400000, guid: 359342f0baa5cfa428382d9399ec2900, type: 2}
-  consumable: 1
-  cooldownDuration: 0
+  consumable: 0
+  cooldownDuration: 10
   sonidoAlCastear: {fileID: 0}
   animacionTrigger: 
   glowVfxPrefab: {fileID: 0}

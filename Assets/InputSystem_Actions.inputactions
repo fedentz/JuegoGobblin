@@ -544,6 +544,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8bbfa260-3a27-4269-acf1-cdf5fcc38981",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EmoteCheer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b88acd35-71bb-4fa8-9401-390e2ef208f4",
                     "path": "<Keyboard>/u",
                     "interactions": "",
@@ -557,6 +568,17 @@
                     "name": "",
                     "id": "aaf4aff1-f9d9-4419-aa20-f5b41a8542f9",
                     "path": "<DualShockGamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EmoteBaile1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62df6e2d-c39a-45b3-bd6f-39349157c748",
+                    "path": "<XInputController>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -588,6 +610,17 @@
                 },
                 {
                     "name": "",
+                    "id": "59ab5285-5744-4214-9c10-9fd4952c06e2",
+                    "path": "<XInputController>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EmoteBaile2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c85da2fb-e32f-4025-b825-43438ed2faad",
                     "path": "<Keyboard>/o",
                     "interactions": "",
@@ -601,6 +634,17 @@
                     "name": "",
                     "id": "9143668e-4cc9-4ca8-8695-530b1e5afe35",
                     "path": "<DualShockGamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EmoteAura",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bec766b-1ec4-4726-9c6a-c8d932fc1449",
+                    "path": "<XInputController>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -675,6 +719,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "03b83896-4e96-4e56-a557-0b42d0d4667b",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
                     "id": "c7a3145a-512b-465a-b406-4ca794a15e67",
                     "path": "1DAxis",
@@ -698,6 +753,17 @@
                 },
                 {
                     "name": "negative",
+                    "id": "37843925-ae79-49ad-9307-ed7798a60db5",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
                     "id": "3ccf180b-9662-4a20-8996-503183f34634",
                     "path": "<DualShockGamepad>/leftShoulder",
                     "interactions": "",
@@ -711,6 +777,17 @@
                     "name": "positive",
                     "id": "12884ede-0fc5-40b7-853c-51d804a5861c",
                     "path": "<Mouse>/scroll/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "701ae550-4444-4b30-999c-78e4ea6d5fc3",
+                    "path": "<XInputController>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

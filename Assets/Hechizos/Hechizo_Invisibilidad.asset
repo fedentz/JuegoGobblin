@@ -24,7 +24,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a24fc43d542e54e468994312593bf9c8, type: 3}
   efecto: {fileID: 11400000, guid: 39b29949096b6804d8a8c00db5169d8e, type: 2}
   consumable: 0
-  cooldownDuration: 15
+  cooldownDuration: 20
   sonidoAlCastear: {fileID: 0}
   animacionTrigger: 
   glowVfxPrefab: {fileID: 0}
