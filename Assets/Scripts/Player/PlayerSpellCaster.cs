@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Project.Spells;
 using Project.Interaction;
+using Project.Enemy;
 
 namespace Project.Player
 {
@@ -39,6 +40,8 @@ namespace Project.Player
         public event Action<int, bool> SlotCooldownChanged;
         // avisa cuál slot quedó seleccionado (para que la UI lo resalte).
         public event Action<int> SelectedSlotChanged;
+        // (slotIndex, nuevoHechizo) — se dispara al reemplazar un slot lleno con una SpellStone.
+        public event Action<int, SpellData> OnSpellReplaced;
 
         private readonly SpellData[] slots = new SpellData[4];
         private readonly float[] cooldownEndTime = new float[4];
@@ -48,6 +51,24 @@ namespace Project.Player
         public SpellData GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
         public bool IsSlotOnCooldown(int index) => index >= 0 && index < slots.Length && Time.time < cooldownEndTime[index];
         public int SelectedSlot => selectedSlot;
+
+        public bool HasSpell(SpellData spell)
+        {
+            if (spell == null) return false;
+            foreach (SpellData s in slots)
+                if (s == spell) return true;
+            return false;
+        }
+
+        public bool AllSlotsFull
+        {
+            get
+            {
+                for (int i = 0; i < slots.Length; i++)
+                    if (slots[i] == null) return false;
+                return true;
+            }
+        }
 
         private void Awake()
         {
@@ -95,6 +116,17 @@ namespace Project.Player
             }
 
             Debug.Log("No hay slots de hechizo libres");
+        }
+
+        // Reemplaza el slot indicado por newSpell. Llamar solo cuando AllSlotsFull == true:
+        // UnlearnSpell libera exactamente ese slot, y LearnSpell (que busca el primer libre)
+        // lo rellena en el mismo índice porque el resto sigue ocupado.
+        public void ReplaceSpell(int slotIndex, SpellData newSpell)
+        {
+            if (newSpell == null) return;
+            UnlearnSpell(slotIndex);
+            LearnSpell(newSpell);
+            OnSpellReplaced?.Invoke(slotIndex, newSpell);
         }
 
         // Saca un hechizo del slot a mano (todavía no hay UI para esto, pero queda listo
@@ -348,10 +380,19 @@ namespace Project.Player
             foreach (var hit in hits)
             {
                 if (hit.transform.root == transform.root) continue; // no empujarse a sí mismo
+
+                Vector3 direccion = (hit.transform.position - pushOrigin.position).normalized;
+
+                EnemyController enemy = hit.GetComponentInParent<EnemyController>();
+                if (enemy != null)
+                {
+                    enemy.Knockback(direccion, fuerza * 0.45f);
+                    break;
+                }
+
                 Rigidbody rb = hit.attachedRigidbody;
                 if (rb == null) continue;
 
-                Vector3 direccion = (hit.transform.position - pushOrigin.position).normalized;
                 rb.AddForce(direccion * fuerza, ForceMode.Impulse);
                 break;
             }

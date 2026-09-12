@@ -201,6 +201,14 @@ namespace Project.Enemy
                 return;
             }
 
+            // Null se chequea primero; IsDead solo se evalúa si el objeto todavía existe.
+            var targetHealth = chaseTarget.GetComponent<PlayerHealth>();
+            if (targetHealth != null && targetHealth.IsDead)
+            {
+                EnterSearching();
+                return;
+            }
+
             agent.SetDestination(chaseTarget.transform.position);
 
             if (!checkedVision) return;
@@ -280,6 +288,11 @@ namespace Project.Enemy
             else speedParam = state == State.Chasing ? 1f : 0.6f;
 
             animator.SetFloat("Speed", speedParam);
+        }
+
+        public void Knockback(Vector3 direccion, float distancia)
+        {
+            agent.Warp(transform.position + direccion.normalized * distancia);
         }
 
         private void OnTriggerEnter(Collider other) => TryDealDamage(other);

@@ -50,6 +50,12 @@ namespace Project.UI
         [SerializeField] private LocalizedString saveLabel;
         [Tooltip("Solo la palabra 'Return'/'Devolver' — el 'Q: ' se arma en código.")]
         [SerializeField] private LocalizedString returnLabel;
+        [Tooltip("Prefijo de hold, ej: 'Mantener' / 'Hold'. Se pone ANTES del glyph: 'Mantener E: Reemplazar'.")]
+        [SerializeField] private LocalizedString holdPrefix;
+        [Tooltip("Formato con el nombre del hechizo nuevo, ej: '¡{0} equipado!'")]
+        [SerializeField] private LocalizedString spellReplacedFormat;
+        [Tooltip("Cuando el jugador ya tiene ese hechizo equipado. Ej: 'Ya tenés este hechizo'.")]
+        [SerializeField] private LocalizedString spellAlreadyOwnedMessage;
 
         [Header("Error Message")]
         [SerializeField] private TMP_Text errorText;
@@ -62,18 +68,28 @@ namespace Project.UI
         [Tooltip("Formato con el nombre del ítem, ej: \"{0} guardado!\"")]
         [SerializeField] private LocalizedString itemSavedFormat;
 
+        private PlayerSpellCaster spellCaster;
         private Coroutine errorCoroutine;
         private Coroutine successCoroutine;
+        private Coroutine spellReplacedCoroutine;
 
         private void OnEnable()
         {
             if (interactor == null) return;
+
+            spellCaster = interactor.GetComponent<PlayerSpellCaster>();
 
             interactor.TargetChanged += HandleTargetChanged;
             interactor.ItemPickedUp += HandleItemPickedUp;
             interactor.ItemResolved += HandleItemResolved;
             interactor.InsufficientSpace += HandleInsufficientSpace;
             interactor.ItemSaved += HandleItemSaved;
+
+            if (spellCaster != null)
+            {
+                spellCaster.SlotChanged += HandleSlotChangedWhileLookingAtStone;
+                spellCaster.OnSpellReplaced += HandleSpellReplaced;
+            }
 
             HideAllPanels();
             HideErrorAndSuccess();
@@ -88,6 +104,12 @@ namespace Project.UI
             interactor.ItemResolved -= HandleItemResolved;
             interactor.InsufficientSpace -= HandleInsufficientSpace;
             interactor.ItemSaved -= HandleItemSaved;
+
+            if (spellCaster != null)
+            {
+                spellCaster.SlotChanged -= HandleSlotChangedWhileLookingAtStone;
+                spellCaster.OnSpellReplaced -= HandleSpellReplaced;
+            }
         }
 
         private void HandleTargetChanged(IInteractable target)
@@ -137,8 +159,49 @@ namespace Project.UI
 
             ritualNameText.text = spell != null ? spell.displayName.GetLocalizedString() : "";
 
-            string verb = spellStone.ActionVerb.GetLocalizedString();
-            ritualPromptText.text = $"{interactor.InteractKeyGlyph}: {verb}";
+            // Prompt dinámico: ya equipado > hold (slots llenos) > tap (slot libre).
+            if (interactor.CurrentTargetAlreadyOwned)
+            {
+                ritualPromptText.text = spellAlreadyOwnedMessage.IsEmpty
+                    ? "Ya tenés este hechizo"
+                    : spellAlreadyOwnedMessage.GetLocalizedString();
+            }
+            else if (interactor.CurrentTargetRequiresHold)
+            {
+                string hold = holdPrefix.IsEmpty ? "Hold" : holdPrefix.GetLocalizedString();
+                string verb = spellStone.ReplaceVerb.IsEmpty ? spellStone.ActionVerb.GetLocalizedString() : spellStone.ReplaceVerb.GetLocalizedString();
+                ritualPromptText.text = $"{hold} {interactor.InteractKeyGlyph}: {verb}";
+            }
+            else
+            {
+                string verb = spellStone.ActionVerb.GetLocalizedString();
+                ritualPromptText.text = $"{interactor.InteractKeyGlyph}: {verb}";
+            }
+        }
+
+        // Refresca el prompt de la SpellStone si el jugador llena (o vacía) un slot
+        // mientras sigue mirando la misma piedra.
+        private void HandleSlotChangedWhileLookingAtStone(int index, SpellData spell)
+        {
+            if (interactor.CurrentTarget is SpellStone stone)
+                ShowRitualPreview(stone);
+        }
+
+        private void HandleSpellReplaced(int slotIndex, SpellData newSpell)
+        {
+            if (spellReplacedCoroutine != null) StopCoroutine(spellReplacedCoroutine);
+            spellReplacedCoroutine = StartCoroutine(ShowSpellReplacedMessage(newSpell));
+        }
+
+        private IEnumerator ShowSpellReplacedMessage(SpellData spell)
+        {
+            successText.gameObject.SetActive(true);
+            string spellName = spell != null && !spell.displayName.IsEmpty
+                ? spell.displayName.GetLocalizedString()
+                : "";
+            successText.text = spellReplacedFormat.IsEmpty ? spellName : spellReplacedFormat.GetLocalizedString(spellName);
+            yield return new WaitForSeconds(successDuration);
+            successText.gameObject.SetActive(false);
         }
 
         private void HandleItemPickedUp(ItemData item)
