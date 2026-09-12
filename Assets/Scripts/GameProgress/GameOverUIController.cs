@@ -16,11 +16,13 @@
 // Todos los paneles deben estar DESACTIVADOS por defecto en el Prefab/Scene.
 // ============================================================
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Project.Core;
+using Project.Player;
 
 namespace Project.UI
 {
@@ -97,7 +99,20 @@ namespace Project.UI
 
         public void VolverAlMenu()
         {
+            ReiniciarJugadores();
             SceneManager.LoadScene(nombreEscenaLobby);
+        }
+
+        // Los jugadores quedan DontDestroyOnLoad desde que se unen en el Lobby (LobbyController),
+        // así que sobreviven a cualquier cambio de escena. Hay que destruirlos acá para que la
+        // próxima partida arranque con vida/inventario/hechizos limpios, no con lo que quedó de esta.
+        private void ReiniciarJugadores()
+        {
+            var jugadores = new List<GobblinController>(PlayerRegistry.ActivePlayers);
+            foreach (var jugador in jugadores)
+            {
+                if (jugador != null) Destroy(jugador.gameObject);
+            }
         }
     }
 }
